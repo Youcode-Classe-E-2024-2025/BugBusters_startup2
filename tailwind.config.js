@@ -7,7 +7,7 @@ module.exports = {
         jura: ['Jura', 'sans-serif'],
       },
       colors: {
-        primary: '#242423',
+        primary: '#171717',
       },
     },
   },
