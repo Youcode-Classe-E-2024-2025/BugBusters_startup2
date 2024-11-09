@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../../css/output.css">
 </head>
 <body class="bg-zinc-800">
-    <section class="flex">
+    <section id="PM" class="flex">
         <!-- side bare -->
-        <div class="bg-black">
+        <div class="bg-black min-h-screen">
             <div class="grid justify-items-start h-48 gap-2">
                 <img class="mb-8" src="../../imges/admin_logo.png" alt="" width="350">
                 <a href="admin.html" class="text-white w-40 text-center">Dashboard</a>
@@ -22,7 +22,7 @@
         <main class="w-[100vw]">
             <!-- management white card -->
              <div class="justify-items-end grid pt-12 pr-14 mb-6">
-                <button class="h-14 w-44 text-2xl bg-zinc-600 text-white rounded-2xl font-medium">Add Game</button>
+                <button onclick="blurToggel(event)" class="h-14 w-44 text-2xl bg-zinc-600 text-white rounded-2xl font-medium">Add Game</button>
              </div>
             <div class="justify-items-center grid gap-6">
                 <div class="flex bg-white text-black text-3xl rounded-3xl p-6">
@@ -103,7 +103,8 @@
         </main>
         <!-- end of main content -->
     </section>
-    <section class="fixed top-10 w-screen h-5 hidden">
+    <button onclick="blurToggel(event)" id="remblur_btn" class="fixed top-0 w-screen h-screen hidden bg-transparent"></button>
+    <section id="add_form" class="fixed top-10 w-screen h-5 hidden">
         <form class="flex gap-28 bg-white justify-self-center p-10">
             <div class="grid gap-0 justify-items-center content-center">
                 <h3 class="text-4xl h-auto">Upload Cover</h3>
@@ -120,11 +121,12 @@
                     <input class="w-36 text-center border-black border" type="text" placeholder="Now Price">
                 </div>
                 <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
-                    <button class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
+                    <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
                     <button class="h-10 w-32 text-xl bg-black text-white">Add</button>
                 </div>
             </div>
         </form>
     </section>
+    <script src="../../js/script.js"></script>
 </body>
 </html>
