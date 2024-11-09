@@ -6,35 +6,63 @@
     <title>Product management</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-<body class="bg-gray-300">
+<body class="bg-zinc-800">
     <section class="flex">
         <!-- side bare -->
         <div class="bg-black h-screen">
             <div class="grid justify-items-start h-48 gap-2">
                 <img class="mb-8" src="../../imges/admin_logo.png" alt="" width="350">
-                <button class="text-white ml-11">Dashboard</button>
-                <button class="text-white ml-11">Product Management</button>
-                <button class="text-white ml-11"> Contact Messages</button>
+                <button class="text-white w-40">Dashboard</button>
+                <button class="text-white w-60">Product Management</button>
+                <button class="text-white w-52"> Contact Messages</button>
             </div>
         </div>
         <!-- end of side bare -->
         <!-- main content -->
-        <main class="justify-items-center w-[100vw] grid gap-4">
-            <div class="flex gap-44 bg-zinc-600 text-white mt-6 text-3xl rounded-lg p-14 h-min">
-                <div class="justify-items-center">
-                    <p>total Games</p>
-                    <p class="text-6xl">50</p>
+        <main class="w-[100vw]">
+            <!-- management white card -->
+             <div class="justify-items-end grid pt-12 pr-14 mb-6">
+                <button class="h-14 w-44 text-2xl bg-zinc-500 text-white rounded-2xl font-medium">Add Game</button>
+             </div>
+            <div class="justify-items-center grid gap-6">
+                <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
+                    <div class="justify-items-center">
+                        <img class="ml-3" src="../../imges/products/22.webp" alt="" width="100">
+                    </div>
+                    <div class="min-w-[42rem] ml-6">
+                        <div class="grid gap-3">
+                            <div>
+                                <p class="text-3xl font-medium">Elden Ring</p>
+                                <p class="text-xl">type:<span class="ml-2">battle royale</span></p>
+                                <p class="text-xl">Price:<span class="ml-2">49.99 $US</span></p>
+                            </div>
+                            <div class="flex text-xl gap-10">
+                                <button>Delete</button>
+                                <button>Edit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="justify-items-center">
-                    <p>Installed</p>
-                    <p class="text-6xl">60</p>
-                </div>
-                <div class="justify-items-center">
-                    <p>Incomme</p>
-                    <p class="text-6xl">50<span class="text-xl">$US</span></p>
+                <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
+                    <div class="justify-items-center">
+                        <img class="ml-3" src="../../imges/products/22.webp" alt="" width="100">
+                    </div>
+                    <div class="min-w-[42rem] ml-6">
+                        <div class="grid gap-3">
+                            <div>
+                                <p class="text-3xl font-medium">Elden Ring</p>
+                                <p class="text-xl">type:<span class="ml-2">battle royale</span></p>
+                                <p class="text-xl">Price:<span class="ml-2">49.99 $US</span></p>
+                            </div>
+                            <div class="flex text-xl gap-10">
+                                <button>Delete</button>
+                                <button>Edit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+            <!-- end of management white card -->
             
         </main>
         <!-- end of main content -->
