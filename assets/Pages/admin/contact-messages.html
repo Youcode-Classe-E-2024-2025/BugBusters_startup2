@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../css/output.css">
 </head>
-<body>
-    
+<body class="bg-zinc-800">
+    <section class="flex">
+        <!-- side bare -->
+        <div class="bg-black min-h-screen">
+            <div class="grid justify-items-start h-48 gap-2">
+                <img class="mb-8" src="../../imges/admin_logo.png" alt="" width="350">
+                <button class="text-white w-40">Dashboard</button>
+                <button class="text-white w-60">Product Management</button>
+                <button class="text-white w-52"> Contact Messages</button>
+            </div>
+        </div>
+        <!-- end of side bare -->
+        <!-- main content -->
+        <main class="w-[100vw]">
+            <!-- management white card -->
+            <div class="m-14 ml-20">
+                <h1 class="text-4xl text-white font-medium">User Contact Messages</h1>
+            </div>
+            <div class="justify-items-center">
+                <table class="w-5/6  border-collapse border border-zinc-500 bg-zinc-600 text-white">
+                    <tr class="border-collapse border border-zinc-500 bg-zinc-500 text-3xl">
+                        <th class="border-collapse border border-zinc-500 p-5">Email</th>
+                        <th>content</th>
+                    </tr>
+                    <tr class="border-collapse border border-zinc-500">
+                        <td class="border-collapse border border-zinc-500 p-5">ex1@gmail.com</td>
+                        <td class="p-5"> Hi, I received a damaged copy of "Assassin’s Creed 
+                            Odyssey". Can I get a replacement or refund?
+                        </td>
+                        
+                    </tr>
+                    <tr class="border-collapse border border-zinc-500">
+                        <td class="border-collapse border border-zinc-500 p-5">ex2@gmail.com</td>
+                        <td class="p-5"> I'm interested in purchasing "The Last of Us Part II" for PS4. 
+                            Could you let me know if the game is currently in stock and 
+                            if there are any ongoing discounts or promotions for it?
+                        </td>
+                    </tr>
+                </table>
+            </div>    
+            <!-- end of management white card -->
+            
+        </main>
+        <!-- end of main content -->
+    </section>
 </body>
 </html>
