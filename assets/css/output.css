@@ -610,6 +610,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.ml-11 {
+  margin-left: 2.75rem;
+}
+
 .flex {
   display: flex;
 }
@@ -854,6 +858,11 @@ video {
 .bg-zinc-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}
+
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .p-10 {
