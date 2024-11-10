@@ -1,7 +1,5 @@
 
 
-// let obj= {number:1}
-// let i=1;
 function blurToggel(ev){
     document.getElementById("PM").classList.toggle("blur-md");
     document.getElementById("add_form").classList.toggle("hidden");
@@ -9,15 +7,6 @@ function blurToggel(ev){
     ev.preventDefault()
 };
 
-// function local(){
-//     while(obj.number<1000){
-//         i+=1;
-//         obj.number=i;
-//         let myJSON = JSON.stringify(obj);
-//         localStorage.setItem("testJSON", myJSON);
-//     }
-
-// }
 let games = {
     game1: {
         title: "Star Wars Jedi",
@@ -350,10 +339,12 @@ function saveGamesToStorage() {
 if (!localStorage.getItem("productData")) { //if no local storage make one
     saveGamesToStorage();
 }
+
 // Object.keys(games)[Object.keys(games).length-1] gets the last key string in object
 function gameAdd(){
     let gameIndex= Number(Object.keys(games)[Object.keys(games).length-1].substr(4)); // removes the first 4 string coverts the rest to a number
-    let newIndex = gameIndex+1;
+    let newIndex = gameIndex;
+    newIndex++;
     let newKey= "game"+newIndex;
     let newGame={[newKey]:{
         title: document.forms["addForm"]["addTitle"].value,
@@ -365,39 +356,76 @@ function gameAdd(){
         discount: document.forms["addForm"]["addDescount"].value,
         discountQuantity: 180}
     }
-    // console.log(newKey);
     Object.assign(games,newGame);
     saveGamesToStorage()
 
 }
-let text = localStorage.getItem("productData");
-games = JSON.parse(text);
 
-document.getElementById("addGameBtn").addEventListener("click",function(){
-    let text = localStorage.getItem("productData");
-    games = JSON.parse(text);
-    console.log(games)
-});
+// let text = localStorage.getItem("productData");
+// games = JSON.parse(text);
 
+// for(let n=1;n<=Object.keys(games).length;n++){
+//     document.getElementById("pmList").innerHTML+=`
+//                 <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
+//                     <div class="justify-items-center">
+//                         <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
+//                     </div>
+//                     <div class="min-w-[42rem] ml-6">
+//                         <div class="grid gap-3">
+//                             <div>
+//                                 <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
+//                                 <p class="text-xl">type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
+//                                 <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
+//                             </div>
+//                             <div class="flex text-xl gap-10">
+//                                 <button id="game${n}" onclick="delGame(this.id)" >Delete</button>
+//                                 <button>Edit</button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>`
+// };
+function delGame(gamid) {
+    console.log(gamid);
+    delete games[gamid];
+    saveGamesToStorage();
+    renderGameList();
+}
 
-for(let n=1;n<=Object.keys(games).length;n++){
-    document.getElementById("pmList").innerHTML+=`
-                <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
-                    <div class="justify-items-center">
-                        <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
-                    </div>
-                    <div class="min-w-[42rem] ml-6">
-                        <div class="grid gap-3">
-                            <div>
-                                <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
-                                <p class="text-xl">type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
-                                <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
-                            </div>
-                            <div class="flex text-xl gap-10">
-                                <button>Delete</button>
-                                <button>Edit</button>
-                            </div>
+function renderGameList() {
+    document.getElementById("pmList").innerHTML = '';
+    for (let n = 1; n <= Object.keys(games).length; n++) {
+        document.getElementById("pmList").innerHTML += `
+            <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
+                <div class="justify-items-center">
+                    <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
+                </div>
+                <div class="min-w-[42rem] ml-6">
+                    <div class="grid gap-3">
+                        <div>
+                            <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
+                            <p class="text-xl">Type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
+                            <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
+                        </div>
+                        <div class="flex text-xl gap-10">
+                            <button class="delete-btn" data-id="${Object.keys(games)[n-1]}">Delete</button>
+                            <button>Edit</button>
                         </div>
                     </div>
-                </div>`
-};
+                </div>
+            </div>`;
+    }
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const gamid = e.target.getAttribute('data-id');
+            delGame(gamid);
+        });
+    });
+}
+
+
+
+
+let text = localStorage.getItem("productData");
+games = JSON.parse(text);
+renderGameList();
