@@ -554,32 +554,24 @@ video {
   display: none;
 }
 
-.fixed {
-  position: fixed;
+.pointer-events-none {
+  pointer-events: none;
 }
 
-.top-10 {
-  top: 2.5rem;
+.fixed {
+  position: fixed;
 }
 
 .top-0 {
   top: 0px;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
-}
-
-.m-6 {
-  margin: 1.5rem;
-}
-
-.m-8 {
-  margin: 2rem;
-}
-
-.m-10 {
-  margin: 2.5rem;
 }
 
 .m-14 {
@@ -598,6 +590,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.ml-20 {
+  margin-left: 5rem;
+}
+
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -612,14 +608,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.ml-9 {
-  margin-left: 2.25rem;
-}
-
-.ml-20 {
-  margin-left: 5rem;
 }
 
 .flex {
@@ -675,10 +663,6 @@ video {
   min-height: 100vh;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-32 {
   width: 8rem;
 }
@@ -699,6 +683,10 @@ video {
   width: 12rem;
 }
 
+.w-5\/6 {
+  width: 83.333333%;
+}
+
 .w-52 {
   width: 13rem;
 }
@@ -715,16 +703,24 @@ video {
   width: 100vw;
 }
 
-.w-5\/6 {
-  width: 83.333333%;
-}
-
 .min-w-\[42rem\] {
   min-width: 42rem;
 }
 
 .border-collapse {
   border-collapse: collapse;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-none {
+  cursor: none;
+}
+
+.cursor-default {
+  cursor: default;
 }
 
 .resize-none {
@@ -737,10 +733,6 @@ video {
 
 .content-center {
   align-content: center;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-between {
@@ -840,6 +832,10 @@ video {
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -860,10 +856,6 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
 .p-10 {
   padding: 2.5rem;
 }
@@ -880,16 +872,12 @@ video {
   padding: 1rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
-.p-7 {
-  padding: 1.75rem;
-}
-
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .pr-14 {
@@ -945,10 +933,5 @@ video {
 
 .blur-md {
   --tw-blur: blur(12px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.blur {
-  --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
