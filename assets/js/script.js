@@ -1,23 +1,16 @@
 
 
-// let obj= {number:1}
-// let i=1;
-function blurToggel(ev){
+function blurToggel(){
     document.getElementById("PM").classList.toggle("blur-md");
     document.getElementById("add_form").classList.toggle("hidden");
     document.getElementById("remblur_btn").classList.toggle("hidden");
-    ev.preventDefault()
+};
+function blureditToggel(){
+    document.getElementById("PM").classList.toggle("blur-md");
+    document.getElementById("edit_form").classList.toggle("hidden");
+    document.getElementById("remblur_btn").classList.toggle("hidden");
 };
 
-// function local(){
-//     while(obj.number<1000){
-//         i+=1;
-//         obj.number=i;
-//         let myJSON = JSON.stringify(obj);
-//         localStorage.setItem("testJSON", myJSON);
-//     }
-
-// }
 let games = {
     game1: {
         title: "Star Wars Jedi",
@@ -341,44 +334,128 @@ let games = {
     }
 };
 
-// document.getElementById("fortnite").setAttribute("src",games.game9.images[0]);
-for(let n=1;n<Object.keys(games).length;n++){
-    document.getElementById("pmList").innerHTML+=`
-                <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
-                    <div class="justify-items-center">
-                        <img class="ml-3" src="../../imges/products/${n}.webp" alt="" width="100">
-                    </div>
-                    <div class="min-w-[42rem] ml-6">
-                        <div class="grid gap-3">
-                            <div>
-                                <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
-                                <p class="text-xl">type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
-                                <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
-                            </div>
-                            <div class="flex text-xl gap-10">
-                                <button>Delete</button>
-                                <button>Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
+
+function saveGamesToStorage() {
+    let myJSON = JSON.stringify(games);
+    localStorage.setItem("productData", myJSON);
+}
+
+if (!localStorage.getItem("productData")) { //if no local storage make one
+    saveGamesToStorage();
+}
+
+// Object.keys(games)[Object.keys(games).length-1] gets the last key string in object
+function gameAdd(){
+    let gameIndex= Number(Object.keys(games)[Object.keys(games).length-1].substr(4)); // removes the first 4 string coverts the rest to a number
+    let newIndex = gameIndex;
+    newIndex++;
+    let newKey= "game"+newIndex;
+    let newGame={[newKey]:{
+        title: document.forms["addForm"]["addTitle"].value,
+        category: "Action-Adventure",
+        images:[document.forms["addForm"]["fileUpload"].value],
+        shortDescription: document.forms["addForm"]["addShortInfo"].value,
+        longDescription: document.forms["addForm"]["addLongDescription"].value,
+        price: document.forms["addForm"]["addPrice"].value,
+        discount: document.forms["addForm"]["addDescount"].value,
+        discountQuantity: 180}
+    }
+    Object.assign(games,newGame);
+    saveGamesToStorage()
+
+}
+
+// let text = localStorage.getItem("productData");
+// games = JSON.parse(text);
+
+// for(let n=1;n<=Object.keys(games).length;n++){
+//     document.getElementById("pmList").innerHTML+=`
+//                 <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
+//                     <div class="justify-items-center">
+//                         <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
+//                     </div>
+//                     <div class="min-w-[42rem] ml-6">
+//                         <div class="grid gap-3">
+//                             <div>
+//                                 <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
+//                                 <p class="text-xl">type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
+//                                 <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
+//                             </div>
+//                             <div class="flex text-xl gap-10">
+//                                 <button id="game${n}" onclick="delGame(this.id)" >Delete</button>
+//                                 <button>Edit</button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>`
+// };
+function delGame(gamid) {
+    delete games[gamid];
+    saveGamesToStorage();
+    renderGameList();
+}
+function vGame(gamid){
+    document.forms["editForm"]["editTitle"].value =games[gamid].title;
+    document.forms["editForm"]["editShortInfo"].value =games[gamid].shortDescription;
+    document.forms["editForm"]["editLongDescription"].value =games[gamid].longDescription;
+    document.forms["editForm"]["editPrice"].value =games[gamid].price;
+    document.forms["editForm"]["editDescount"].value =games[gamid].discount;
+    
+}
+function editGame(gamid){
+    games[gamid]={
+        title: document.forms["editForm"]["editTitle"].value,
+        category: "Action-Adventure",
+        images:games[gamid].images,
+        shortDescription: document.forms["editForm"]["editShortInfo"].value,
+        longDescription: document.forms["editForm"]["editLongDescription"].value,
+        price: document.forms["editForm"]["editPrice"].value,
+        discount: document.forms["editForm"]["editDescount"].value,
+        discountQuantity: 180
+    }
+    saveGamesToStorage();
+    renderGameList();
 };
-document.getElementById("pmList").innerHTML+=`
-                <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
-                    <div class="justify-items-center">
-                        <img class="ml-3" src="../../imges/products/21.webp" alt="" width="100">
-                    </div>
-                    <div class="min-w-[42rem] ml-6">
-                        <div class="grid gap-3">
-                            <div>
-                                <p class="text-3xl font-medium">${games[Object.keys(games)[0]].title}</p>
-                                <p class="text-xl">type:<span class="ml-2">battle royale</span></p>
-                                <p class="text-xl">Price:<span class="ml-2">49.99 $US</span></p>
-                            </div>
-                            <div class="flex text-xl gap-10">
-                                <button>Delete</button>
-                                <button>Edit</button>
-                            </div>
+function renderGameList() {
+    document.getElementById("pmList").innerHTML = '';
+    for (let n = 1; n <= Object.keys(games).length; n++) {
+        document.getElementById("pmList").innerHTML += `
+            <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
+                <div class="justify-items-center">
+                    <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
+                </div>
+                <div class="min-w-[42rem] ml-6">
+                    <div class="grid gap-3">
+                        <div>
+                            <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
+                            <p class="text-xl">Type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
+                            <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
+                        </div>
+                        <div class="flex text-xl gap-10">
+                            <button class="delete-btn" data-id="${Object.keys(games)[n-1]}">Delete</button>
+                            <button onclick="blureditToggel(),vGame(this.getAttribute('data-id'))" class="edit-btn" data-id="${Object.keys(games)[n-1]}">Edit</button>
                         </div>
                     </div>
-                </div>`
+                </div>
+            </div>`;
+    }
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const gamid = e.target.getAttribute('data-id');
+            delGame(gamid);
+        });
+    });
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const gamid = e.target.getAttribute('data-id');
+            document.getElementById("editGameBtn").setAttribute("data-id",gamid);//sets an attrebute value game1 for exemple
+        });
+    });
+}
+
+
+
+
+let text = localStorage.getItem("productData");
+games = JSON.parse(text);
+renderGameList();
