@@ -1,10 +1,14 @@
 
 
-function blurToggel(ev){
+function blurToggel(){
     document.getElementById("PM").classList.toggle("blur-md");
     document.getElementById("add_form").classList.toggle("hidden");
     document.getElementById("remblur_btn").classList.toggle("hidden");
-    ev.preventDefault()
+};
+function blureditToggel(){
+    document.getElementById("PM").classList.toggle("blur-md");
+    document.getElementById("edit_form").classList.toggle("hidden");
+    document.getElementById("remblur_btn").classList.toggle("hidden");
 };
 
 let games = {
@@ -386,12 +390,32 @@ function gameAdd(){
 //                 </div>`
 // };
 function delGame(gamid) {
-    console.log(gamid);
     delete games[gamid];
     saveGamesToStorage();
     renderGameList();
 }
-
+function vGame(gamid){
+    document.forms["editForm"]["editTitle"].value =games[gamid].title;
+    document.forms["editForm"]["editShortInfo"].value =games[gamid].shortDescription;
+    document.forms["editForm"]["editLongDescription"].value =games[gamid].longDescription;
+    document.forms["editForm"]["editPrice"].value =games[gamid].price;
+    document.forms["editForm"]["editDescount"].value =games[gamid].discount;
+    
+}
+function editGame(gamid){
+    games[gamid]={
+        title: document.forms["editForm"]["editTitle"].value,
+        category: "Action-Adventure",
+        images:games[gamid].images,
+        shortDescription: document.forms["editForm"]["editShortInfo"].value,
+        longDescription: document.forms["editForm"]["editLongDescription"].value,
+        price: document.forms["editForm"]["editPrice"].value,
+        discount: document.forms["editForm"]["editDescount"].value,
+        discountQuantity: 180
+    }
+    saveGamesToStorage();
+    renderGameList();
+};
 function renderGameList() {
     document.getElementById("pmList").innerHTML = '';
     for (let n = 1; n <= Object.keys(games).length; n++) {
@@ -409,7 +433,7 @@ function renderGameList() {
                         </div>
                         <div class="flex text-xl gap-10">
                             <button class="delete-btn" data-id="${Object.keys(games)[n-1]}">Delete</button>
-                            <button>Edit</button>
+                            <button onclick="blureditToggel(),vGame(this.getAttribute('data-id'))" class="edit-btn" data-id="${Object.keys(games)[n-1]}">Edit</button>
                         </div>
                     </div>
                 </div>
@@ -419,6 +443,12 @@ function renderGameList() {
         button.addEventListener('click', (e) => {
             const gamid = e.target.getAttribute('data-id');
             delGame(gamid);
+        });
+    });
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const gamid = e.target.getAttribute('data-id');
+            document.getElementById("editGameBtn").setAttribute("data-id",gamid);//sets an attrebute value game1 for exemple
         });
     });
 }

@@ -6,7 +6,7 @@
     <title>Product management</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-<body class="bg-zinc-800 font-jura">
+<body id="pmpBody" class="bg-zinc-800 font-jura">
     <section id="PM" class="flex">
         <!-- side bare -->
         <div class="bg-black min-h-screen">
@@ -55,6 +55,24 @@
                 <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
                     <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
                     <button id="addGameBtn" onclick="gameAdd()" class="h-10 w-32 text-xl bg-black text-white">Add</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <section id="edit_form" class="fixed top-10 w-screen h-5 hidden">
+        <form id="editForm" class="bg-white justify-self-center p-10">
+            <div class="grid gap-2 text-l">
+                <input id="editTitle" class="p-3 border-black border" type="text" placeholder="Title">
+                <textarea id="editShortInfo" class="p-3 border-black border resize-none" name="" placeholder="short info" rows="2" class="resize-none"></textarea>
+                <textarea id="editLongDescription" class="p-3 border-black border  resize-none" name="" placeholder="long description" rows="4" class="resize-none "></textarea>
+                <div class="flex justify-between">
+                    <input id="editDescount" class="w-36 border-black border text-center" type="text" placeholder="Descount">
+                    <input id="editPrice" class="w-36 p-4 text-center border-black border" type="text" placeholder="price">
+                    <input class="w-36 text-center border-black border" type="text" placeholder="Now Price">
+                </div>
+                <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
+                    <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
+                    <button id="editGameBtn" onclick="editGame(this.getAttribute('data-id'))" class="h-10 w-32 text-xl bg-black text-white">Add</button>
                 </div>
             </div>
         </form>
