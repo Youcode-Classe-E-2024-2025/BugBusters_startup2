@@ -342,11 +342,11 @@ let games = {
 };
 
 // document.getElementById("fortnite").setAttribute("src",games.game9.images[0]);
-for(let n=1;n<Object.keys(games).length;n++){
+for(let n=1;n<=Object.keys(games).length;n++){
     document.getElementById("pmList").innerHTML+=`
                 <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
                     <div class="justify-items-center">
-                        <img class="ml-3" src="../../imges/products/${n}.webp" alt="" width="100">
+                        <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
                     </div>
                     <div class="min-w-[42rem] ml-6">
                         <div class="grid gap-3">
@@ -363,22 +363,3 @@ for(let n=1;n<Object.keys(games).length;n++){
                     </div>
                 </div>`
 };
-document.getElementById("pmList").innerHTML+=`
-                <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
-                    <div class="justify-items-center">
-                        <img class="ml-3" src="../../imges/products/21.webp" alt="" width="100">
-                    </div>
-                    <div class="min-w-[42rem] ml-6">
-                        <div class="grid gap-3">
-                            <div>
-                                <p class="text-3xl font-medium">${games[Object.keys(games)[0]].title}</p>
-                                <p class="text-xl">type:<span class="ml-2">battle royale</span></p>
-                                <p class="text-xl">Price:<span class="ml-2">49.99 $US</span></p>
-                            </div>
-                            <div class="flex text-xl gap-10">
-                                <button>Delete</button>
-                                <button>Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
