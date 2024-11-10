@@ -341,7 +341,45 @@ let games = {
     }
 };
 
-// document.getElementById("fortnite").setAttribute("src",games.game9.images[0]);
+
+function saveGamesToStorage() {
+    let myJSON = JSON.stringify(games);
+    localStorage.setItem("productData", myJSON);
+}
+
+if (!localStorage.getItem("productData")) { //if no local storage make one
+    saveGamesToStorage();
+}
+// Object.keys(games)[Object.keys(games).length-1] gets the last key string in object
+function gameAdd(){
+    let gameIndex= Number(Object.keys(games)[Object.keys(games).length-1].substr(4)); // removes the first 4 string coverts the rest to a number
+    let newIndex = gameIndex+1;
+    let newKey= "game"+newIndex;
+    let newGame={[newKey]:{
+        title: document.forms["addForm"]["addTitle"].value,
+        category: "Action-Adventure",
+        images:[document.forms["addForm"]["fileUpload"].value],
+        shortDescription: document.forms["addForm"]["addShortInfo"].value,
+        longDescription: document.forms["addForm"]["addLongDescription"].value,
+        price: document.forms["addForm"]["addPrice"].value,
+        discount: document.forms["addForm"]["addDescount"].value,
+        discountQuantity: 180}
+    }
+    // console.log(newKey);
+    Object.assign(games,newGame);
+    saveGamesToStorage()
+
+}
+let text = localStorage.getItem("productData");
+games = JSON.parse(text);
+
+document.getElementById("addGameBtn").addEventListener("click",function(){
+    let text = localStorage.getItem("productData");
+    games = JSON.parse(text);
+    console.log(games)
+});
+
+
 for(let n=1;n<=Object.keys(games).length;n++){
     document.getElementById("pmList").innerHTML+=`
                 <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">

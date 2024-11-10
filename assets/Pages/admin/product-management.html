@@ -32,29 +32,29 @@
     </section>
     <button onclick="blurToggel(event)" id="remblur_btn" class="fixed top-0 w-screen h-screen hidden bg-transparent cursor-default"></button>
     <section id="add_form" class="fixed top-10 w-screen h-5 hidden">
-        <form class="flex gap-28 bg-white justify-self-center p-10">
+        <form id="addForm" class="flex gap-28 bg-white justify-self-center p-10">
             <div class="grid gap-0 justify-items-center content-center">
                 <h3 class="text-4xl h-auto">Upload Cover</h3>
                 <img src="../../imges/upload.png" alt="" width="200">
                 <!-- <button class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium">Upload</button> -->
                 <!-- <input class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium" type="file" id="myFile" name="filename"> -->
-                <label for="file-upload" class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium inline-block text-center cursor-pointer content-center">
+                <label for="fileUpload" class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium inline-block text-center cursor-pointer content-center">
                     Upload
                 </label>
-                <input id="file-upload" type="file" class="hidden" />
+                <input id="fileUpload" type="file" class="hidden" />
             </div>
             <div class="grid gap-2 text-l">
-                <input class="p-3 border-black border" type="text" placeholder="Title">
-                <textarea class="p-3 border-black border resize-none" name="" id="" placeholder="short info" rows="2" class="resize-none"></textarea>
-                <textarea class="p-3 border-black border  resize-none" name="" id="" placeholder="long description" rows="4" class="resize-none "></textarea>
+                <input id="addTitle" class="p-3 border-black border" type="text" placeholder="Title">
+                <textarea id="addShortInfo" class="p-3 border-black border resize-none" name="" placeholder="short info" rows="2" class="resize-none"></textarea>
+                <textarea id="addLongDescription" class="p-3 border-black border  resize-none" name="" placeholder="long description" rows="4" class="resize-none "></textarea>
                 <div class="flex justify-between">
-                    <input class="w-36 border-black border text-center" type="text" placeholder="Descount">
-                    <input class="w-36 p-4 text-center border-black border" type="text" placeholder="price">
+                    <input id="addDescount" class="w-36 border-black border text-center" type="text" placeholder="Descount">
+                    <input id="addPrice" class="w-36 p-4 text-center border-black border" type="text" placeholder="price">
                     <input class="w-36 text-center border-black border" type="text" placeholder="Now Price">
                 </div>
                 <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
                     <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
-                    <button class="h-10 w-32 text-xl bg-black text-white">Add</button>
+                    <button id="addGameBtn" onclick="gameAdd()" class="h-10 w-32 text-xl bg-black text-white">Add</button>
                 </div>
             </div>
         </form>
