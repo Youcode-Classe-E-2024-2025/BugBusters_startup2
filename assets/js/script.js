@@ -459,3 +459,9 @@ function renderGameList() {
 let text = localStorage.getItem("productData");
 games = JSON.parse(text);
 renderGameList();
+const burgerMenu = document.getElementById('burgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+burgerMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});

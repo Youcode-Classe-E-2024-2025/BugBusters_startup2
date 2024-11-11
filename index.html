@@ -1,12 +1,227 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="assets/css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        @keyframes appear {
+            from {
+                opacity: 0;
+                scale: 0.5;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        #top-sellers {
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0%;
+            animation-fill-mode: forwards;
+        }
+
+        #Preorders {
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0%;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 40s linear infinite;
+        }
+
+        .overflow-hidden {
+            width: 100%;
+            max-width: 100%;
+        }
+    </style>
+
 </head>
-<body>
-    
+
+<body class="bg-primary font-jura">
+    <!-- navbar -->
+    <header>
+        <nav>
+            <ul class="flex flex-row gap-4 justify-between items-center ml-6 mr-10 font-medium">
+                <img src="assets/imges/Logo.webp" class="h-20 w-auto" alt="Logo">
+
+                <!-- Navigation Links for Large Screens -->
+                <div id="navLinks" class="hidden lg:flex flex-row gap-12 items-center">
+                    <li class="text-white"><a href="#">Home</a></li>
+                    <li class="text-white"><a href="#">Community</a></li>
+                    <li class="text-white"><a href="#">Top Sellers</a></li>
+                </div>
+                <div id="authLinks" class="hidden lg:flex flex-row gap-7 items-center">
+                    <a class="text-white" href="#">Sign Up</a>
+                    <a class="text-white bg-slate-600 rounded-lg pl-4 pr-4 pt-1 pb-1" href="#">Login</a>
+                </div>
+
+                <!-- Burger Icon for Small Screens -->
+                <button id="burgerMenu" class="lg:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden flex items-center justify-center bg-primary">
+                <ul id="mobileMenu" class="flex flex-col gap-8 items-center font-medium text-white">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Top Sellers</a></li>
+                    <div class="flex flex-row gap-7 items-center mb-4">
+                        <a class="text-white" href="#">Sign Up</a>
+                        <a class="text-white bg-slate-600 rounded-lg pl-4 pr-4 pt-1 pb-1" href="#">Login</a>
+                    </div>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- main -->
+    <main>
+        <div>
+            <video src="assets/videos/EA Sports FC 25 - Official Reveal Trailer.mp4" loop autoplay muted></video>
+        </div>
+        <div class="flex flex-col items-center">
+            <h2 class="text-7xl text-white mt-14 mb-8 max-md:text-4xl">Top Sellers</h2>
+            <div class="flex flex-row justify-center gap-10 opacity-0 animate-fadeInUp scroll-animate scroll-fade-up ml-10 mr-10"
+                id="top-sellers">
+                <a href="#"><img src="assets/imges/products/3.webp" alt="" class="h-auto"></a>
+                <a href="#"><img src="assets/imges/products/7.webp" alt="" class="h-auto"></a>
+                <a href="#"><img src="assets/imges/products/14.webp" alt="" class="h-auto"></a>
+                <a href="#"><img src="assets/imges/products/12.webp" alt="" class=" h-auto"></a>
+            </div>
+        </div>
+        <div class="flex flex-col items-center">
+            <h2 class="text-7xl text-white mt-14 mb-8 max-md:text-4xl">PreOrders Of GTA 6</h2>
+            <div class="flex flex-row gap-10 items-start justify-center mr-10 ml-10 max-lg:flex-col max-lg:items-center"
+                id="Preorders">
+                <div class="flex justify-end"><img src="assets/imges/products/13.webp" class="h-96 w-auto"
+                        alt="GTA 6 Cover"></div>
+                <div class="w-1/2 flex flex-col gap-20 items-start max-lg:w-full max-lg:items-center">
+                    <p class="text-white text-5xl max-md:text-4xl">Get exclusive bonuses and be
+                        the first to play the next
+                        chapter in the legendary GTA
+                        series.
+                    </p>
+                    <button
+                        class="text-white border-none bg-gradient-to-r from-pink-600 to-orange-300 rounded-lg pl-10 pr-10 pt-4 pb-4 text-5xl flex items-center ml-32 max-xl:text-4xl max-xl:ml-0">Preorder
+                        Today!</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col items-center">
+            <h2 class="text-7xl text-white mt-14 mb-8 max-md:text-4xl">Our Partnerships</h2>
+            <div class="overflow-hidden relative bg-white">
+                <div class="flex flex-row justify-center space-x-40 animate-scroll mt-4 mb-4">
+                    <img class="h-20" src="assets/imges/Partnershipimg/amd.png" alt="AMD">
+                    <img class="h-20" src="assets/imges/Partnershipimg/discord.png" alt="Discord">
+                    <img class="h-20" src="assets/imges/Partnershipimg/GeForce.png" alt="GeForce">
+                    <img class="h-20" src="assets/imges/Partnershipimg/msi.png" alt="MSI">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Nvidia.png" alt="Nvidia">
+                    <img class="h-20" src="assets/imges/Partnershipimg/twitch.png" alt="Twitch">
+                    <img class="h-20" src="assets/imges/Partnershipimg/ubisoft.png" alt="Ubisoft">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Unreal.png" alt="Unreal">
+                    <img class="h-20" src="assets/imges/Partnershipimg/vive.png" alt="Vive">
+                    <!-- Duplicate images for seamless looping -->
+                    <img class="h-20" src="assets/imges/Partnershipimg/amd.png" alt="AMD">
+                    <img class="h-20" src="assets/imges/Partnershipimg/discord.png" alt="Discord">
+                    <img class="h-20" src="assets/imges/Partnershipimg/GeForce.png" alt="GeForce">
+                    <img class="h-20" src="assets/imges/Partnershipimg/msi.png" alt="MSI">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Nvidia.png" alt="Nvidia">
+                    <img class="h-20" src="assets/imges/Partnershipimg/twitch.png" alt="Twitch">
+                    <img class="h-20" src="assets/imges/Partnershipimg/ubisoft.png" alt="Ubisoft">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Unreal.png" alt="Unreal">
+                    <img class="h-20" src="assets/imges/Partnershipimg/vive.png" alt="Vive">
+                    <!-- Duplicate images for seamless looping -->
+                    <img class="h-20" src="assets/imges/Partnershipimg/amd.png" alt="AMD">
+                    <img class="h-20" src="assets/imges/Partnershipimg/discord.png" alt="Discord">
+                    <img class="h-20" src="assets/imges/Partnershipimg/GeForce.png" alt="GeForce">
+                    <img class="h-20" src="assets/imges/Partnershipimg/msi.png" alt="MSI">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Nvidia.png" alt="Nvidia">
+                    <img class="h-20" src="assets/imges/Partnershipimg/twitch.png" alt="Twitch">
+                    <img class="h-20" src="assets/imges/Partnershipimg/ubisoft.png" alt="Ubisoft">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Unreal.png" alt="Unreal">
+                    <img class="h-20" src="assets/imges/Partnershipimg/vive.png" alt="Vive">
+                    <!-- Duplicate images for seamless looping -->
+                    <img class="h-20" src="assets/imges/Partnershipimg/amd.png" alt="AMD">
+                    <img class="h-20" src="assets/imges/Partnershipimg/discord.png" alt="Discord">
+                    <img class="h-20" src="assets/imges/Partnershipimg/GeForce.png" alt="GeForce">
+                    <img class="h-20" src="assets/imges/Partnershipimg/msi.png" alt="MSI">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Nvidia.png" alt="Nvidia">
+                    <img class="h-20" src="assets/imges/Partnershipimg/twitch.png" alt="Twitch">
+                    <img class="h-20" src="assets/imges/Partnershipimg/ubisoft.png" alt="Ubisoft">
+                    <img class="h-20" src="assets/imges/Partnershipimg/Unreal.png" alt="Unreal">
+                    <img class="h-20" src="assets/imges/Partnershipimg/vive.png" alt="Vive">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white mt-14 ">
+        <div class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
+            <img src="assets/imges/Logo.webp" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Company Info</a>
+                    <a>Careers</a>
+                    <a>Press</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Help Center</a>
+                    <a>Contact Us</a>
+                    <a>Refund Policy</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Legal Notices</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
+        <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">Twitter</a>
+        </div>
+        <div class="text-center mt-6 text-xl">
+            <p>© 2024 BitCart. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
