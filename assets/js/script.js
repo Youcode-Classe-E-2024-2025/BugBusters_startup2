@@ -341,3 +341,10 @@ function saveGamesToStorage() {
 if (!localStorage.getItem("productData")) { //if no local storage make one
     saveGamesToStorage();
 }
+
+const burgerMenu = document.getElementById('burgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+burgerMenu?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
