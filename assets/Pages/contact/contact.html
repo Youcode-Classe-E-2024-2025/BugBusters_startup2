@@ -10,7 +10,7 @@
 
     <div class="flex">
         <!-- Sidebar -->
-        <div class="w-1/5 h-800 bg-black h-screen p-6 flex flex-col justify-between">
+        <div class="w-1/5 bg-black h-screen p-6 flex flex-col justify-between">
             <div>
                 <img src="../../imges/Logo.webp">
                 <ul>
@@ -26,14 +26,12 @@
         </div>
 
         <!-- Main Content -->
-        <div class="w-4/5 p-10">
+        <div class="w-4/5 mt-4">
             <!-- Search Bar -->
-            <div class="flex items-center mb-10">
-                <input type="text" placeholder="Search" class="w-full p-2 rounded bg-gray-700 text-gray-300 focus:outline-none" />
-        
-                
-                <img src="../../imges/search.png"  class="h-8">
-                <img src="../../imges/carte.png"  class="h-10">
+            <div class="grid grid-cols-12 m-10 mr-0 mt-0">
+                <input type="text" placeholder="Search" class="w-full col-span-4 p-2 rounded-xl bg-gray-700 text-gray-300 focus:outline-none" />
+                <img src="../../imges/search.png"  class="h-10 z-10">
+                <img src="../../imges/carte.png"  class="h-10 col-start-12">
                     
     
             </div>
@@ -52,13 +50,15 @@
                         <input type="checkbox" class="mr-2 focus:ring-0" required>
                         <span class="text-gray-400">I agree to the <a href="#" class="text-blue-500 hover:underline">Privacy Policy</a> and <a href="#" class="text-blue-500 hover:underline">Terms of Service</a>.</span>
                     </div>
+                    <div class="grid justify-items-end">
+                        <button type="submit" class="w-1/2  bg-blue-500 text-white py-2  mb-4 rounded hover:bg-blue-600">Submit</button>
+                    </div>
                     
-                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Submit</button>
                 </form>
             </div>
         </div>
     </div>
-    <footer class="bg-black text-white mt-14 ">
+    <footer class="bg-black text-white">
         <div class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
             <img src="../../imges/Logo.webp" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
             <div class="mt-14 cursor-pointer max-sm:mt-0">
