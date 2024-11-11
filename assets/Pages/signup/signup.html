@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Sign-Up Page</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
 <body class="bg-black text-white font-sans">
@@ -11,17 +11,19 @@
         <!-- Header -->
         <div class="flex justify-between items-center mb-8">
             <div class="flex items-center space-x-2">
-                <img src="../../imges/Logo.webp" alt="Logo" class=" h-10">
+                <!-- <img src="../../imges/Logo.webp" alt="Logo" class="w-10 h-10"> -->
+                <img src="../../imges/Logo.webp" alt="Logo" class="h-10">
+
             </div>
             <nav class="space-x-8 text-lg">
                 <a href="#" class="hover:text-gray-300">Home</a>
                 <a href="#" class="hover:text-gray-300">Community</a>
                 <a href="#" class="hover:text-gray-300">Top Sellers</a>
-                <a href="#" class="hover:text-gray-300">Sign Up</a>
             </nav>
+            <button class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Login</button>
         </div>
 
-        <!-- Login Section -->
+        <!-- Sign-Up Section -->
         <div class="flex justify-center items-center">
             <!-- Illustration -->
             <div class="w-1/3 hidden lg:block">
@@ -30,16 +32,13 @@
 
             <!-- Form -->
             <div class="bg-black p-10 rounded-lg shadow-md w-full max-w-md">
-                <h2 class="text-3xl font-bold mb-6 text-center">Login Page</h2>
+                <h2 class="text-3xl font-bold mb-6 text-center">Sign-Up Page</h2>
                 
                 <form>
                     <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <input type="password" placeholder="Password" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" placeholder="Confirm Password" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     
-                    <div class="text-right mb-4">
-                        <a href="#" class="text-blue-500 hover:underline">Forgot Password?</a>
-                    </div>
-
                     <div class="flex items-center mb-4">
                         <input type="checkbox" id="terms" class="mr-2">
                         <label for="terms" class="text-sm">
@@ -47,7 +46,7 @@
                         </label>
                     </div>
                     
-                    <button type="submit" class="w-full bg-red-500 py-3 rounded text-lg font-semibold hover:bg-red-600">Login</button>
+                    <button type="submit" class="w-full bg-red-500 py-3 rounded text-lg font-semibold hover:bg-red-600">Sign-Up</button>
                 </form>
             </div>
         </div>
