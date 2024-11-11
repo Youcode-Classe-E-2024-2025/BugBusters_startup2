@@ -345,6 +345,6 @@ if (!localStorage.getItem("productData")) { //if no local storage make one
 const burgerMenu = document.getElementById('burgerMenu');
 const mobileMenu = document.getElementById('mobileMenu');
 
-burgerMenu.addEventListener('click', () => {
+burgerMenu?.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
