@@ -1,5 +1,3 @@
-
-
 function blurToggel(){
     document.getElementById("PM").classList.toggle("blur-md");
     document.getElementById("add_form").classList.toggle("hidden");
