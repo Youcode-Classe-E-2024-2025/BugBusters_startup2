@@ -402,63 +402,6 @@ function vGame(gamid){
     document.forms["editForm"]["editDescount"].value =games[gamid].discount;
     
 }
-function editGame(gamid){
-    games[gamid]={
-        title: document.forms["editForm"]["editTitle"].value,
-        category: "Action-Adventure",
-        images:games[gamid].images,
-        shortDescription: document.forms["editForm"]["editShortInfo"].value,
-        longDescription: document.forms["editForm"]["editLongDescription"].value,
-        price: document.forms["editForm"]["editPrice"].value,
-        discount: document.forms["editForm"]["editDescount"].value,
-        discountQuantity: 180
-    }
-    saveGamesToStorage();
-    renderGameList();
-};
-function renderGameList() {
-    document.getElementById("pmList").innerHTML = '';
-    for (let n = 1; n <= Object.keys(games).length; n++) {
-        document.getElementById("pmList").innerHTML += `
-            <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
-                <div class="justify-items-center">
-                    <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="" width="100">
-                </div>
-                <div class="min-w-[42rem] ml-6">
-                    <div class="grid gap-3">
-                        <div>
-                            <p class="text-3xl font-medium">${games[Object.keys(games)[n-1]].title}</p>
-                            <p class="text-xl">Type:<span class="ml-2">${games[Object.keys(games)[n-1]].category}</span></p>
-                            <p class="text-xl">Price:<span class="ml-2">${games[Object.keys(games)[n-1]].price} $US</span></p>
-                        </div>
-                        <div class="flex text-xl gap-10">
-                            <button class="delete-btn" data-id="${Object.keys(games)[n-1]}">Delete</button>
-                            <button onclick="blureditToggel(),vGame(this.getAttribute('data-id'))" class="edit-btn" data-id="${Object.keys(games)[n-1]}">Edit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
-    }
-    document.querySelectorAll('.delete-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const gamid = e.target.getAttribute('data-id');
-            delGame(gamid);
-        });
-    });
-    document.querySelectorAll('.edit-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const gamid = e.target.getAttribute('data-id');
-            document.getElementById("editGameBtn").setAttribute("data-id",gamid);//sets an attrebute value game1 for exemple
-        });
-    });
-}
-
-
-
-
-let text = localStorage.getItem("productData");
-games = JSON.parse(text);
-renderGameList();
 const burgerMenu = document.getElementById('burgerMenu');
 const mobileMenu = document.getElementById('mobileMenu');
 
