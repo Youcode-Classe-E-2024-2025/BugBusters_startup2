@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
     <link rel="stylesheet" href="../../css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/imges/favicon/favicon-32x32.png" type="image/x-icon">
 </head>
-<body class="bg-primary bg-opacity-90">
+<body class="bg-primary bg-opacity-90 font-jura">
     <section class="flex flex-row">
-        <!-- Sidebar -->
-        <div class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0">
-            <div>
-                <img src="../../imges/Logo.webp" alt="Logo BitCart">
-                <ul>
-                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
-                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
-                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <button class="w-full bg-gray-600 py-2 text-white rounded mb-4">Contact</button>
-                <button class="w-full bg-red-500 py-2 text-white rounded">Déconnecté</button>
-            </div>
+       <!-- Sidebar -->
+       <div class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0">
+        <div class="-mt-6">
+            <img src="../../imges/Logo.webp" alt="Logo BitCart">
+            <ul class="text-center text-[25px]">
+                <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
+                <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
+                <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+            </ul>
         </div>
+        <div>
+            <button class="w-full bg-gray-600 py-2 text-white rounded mb-4">Contact</button>
+            <button class="w-full bg-red-500 py-2 text-white rounded">Déconnecté</button>
+        </div>
+    </div>
         <!-- End of sidebar -->
 
         <!-- Main content -->
-        <main class="flex flex-col m-[10px] justify-items-center w-[100vw] ml-[25%]"> <!-- Changed left margin to ml-[25%] -->
+        <main class="flex flex-col m-[10px] justify-items-center w-[100vw] ml-[25%]">
             <div class="grid grid-cols-12">
                 <input type="text" placeholder="Search" class="w-full col-span-4 p-2 rounded-xl bg-gray-500 h-14 text-gray-300 focus:outline-none m-[55px] mt-4" />
                 <img src="../../imges/search.png" class="h-14 z-10 mt-4 ml-3" alt="Search icon">
@@ -47,24 +49,36 @@
                     <option value="ghj">sjndkj</option>
                 </select>
             </div>
-            <section class="flex justify-center align-middle w-full flex-wrap">
-                <div class="w-[25%] mx-10 mb-10">
+            <section id="productsPageList" class="flex justify-center align-middle w-full flex-wrap">
+                <div class="w-[25%] mx-10 mb-10 text-2xl">
                     <img src="./../../imges/products/14.webp" alt="">
-                    <p class="text-gray-600">edition ultimate</p>
-                    <p class="text-gray-600">red dead redemption 2</p>
-                    <p class="text-gray-600">red dead redemption 2 zehezhyv</p>
+                    <p class="text-gray-600"> Édition Ultimate</p>
+                    <p class="text-white">Red Dead Redemption 2</p>
+                    <div class="flex gap-2">
+                        <p class="bg-[#ff0000] w-20 text-center rounded-md text-white">-20%</p>
+                        <p class="text-gray-600 text-xs content-center">99,99 $US </p>
+                        <p class="text-white ">34,99 $US</p>
+                    </div>
                 </div>
-                <div class="w-[25%] mx-10 mb-10">
+                <div class="w-[25%] mx-10 mb-10 text-2xl">
                     <img src="./../../imges/products/14.webp" alt="">
-                    <p class="text-gray-600">edition ultimate</p>
-                    <p class="text-gray-600">red dead redemption 2</p>
-                    <p class="text-gray-600">red dead redemption 2 zehezhyv</p>
+                    <p class="text-gray-600"> Édition Ultimate</p>
+                    <p class="text-white">Red Dead Redemption 2</p>
+                    <div class="flex gap-2">
+                        <p class="bg-[#ff0000] w-20 text-center rounded-md text-white">-20%</p>
+                        <p class="text-gray-600 text-xs content-center">99,99 $US </p>
+                        <p class="text-white ">34,99 $US</p>
+                    </div>
                 </div>
-                <div class="w-[25%] mx-10 mb-10">
+                <div class="w-[25%] mx-10 mb-10 text-2xl">
                     <img src="./../../imges/products/14.webp" alt="">
-                    <p class="text-gray-600">edition ultimate</p>
-                    <p class="text-gray-600">red dead redemption 2</p>
-                    <p class="text-gray-600">red dead redemption 2 zehezhyv</p>
+                    <p class="text-gray-600"> Édition Ultimate</p>
+                    <p class="text-white">Red Dead Redemption 2</p>
+                    <div class="flex gap-2">
+                        <p class="bg-[#ff0000] w-20 text-center rounded-md text-white">-20%</p>
+                        <p class="text-gray-600 text-xs content-center">99,99 $US </p>
+                        <p class="text-white ">34,99 $US</p>
+                    </div>
                 </div>
             </section>
         </main>
