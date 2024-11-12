@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>products</title>
+    <title>BitCart-About</title>
     <link rel="stylesheet" href="../../css/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../../imges/favicon/favicon-32x32.png" type="image/x-icon">
+    <style>
+        footer {
+            z-index: 1;
+            position: relative;
+        }
+        .sidebar {
+            z-index: 0;
+        }
+    </style>
 </head>
-<body class="bg-primary bg-opacity-90 font-jura">
+
+<body class="bg-primary font-jura">
     <section class="flex flex-row">
         <!-- Sidebar -->
-        <div class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0">
+        <div class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0 sidebar">
             <div class="-mt-6">
                 <img src="../../imges/Logo.webp" alt="Logo BitCart">
                 <ul class="text-center text-[25px]">
@@ -28,12 +39,73 @@
         <!-- End of sidebar -->
 
         <!-- Main content -->
-        <main class="">
-            
-        </main>
+        <main class="flex flex-col justify-items-center w-[100vw] ml-[25%]">
+            <h1 class="text-7xl text-white text-center mt-4">About BitCart</h1>
+            <img class="mt-5" src="../../imges/about.png" alt="">
+            <p class="text-3xl text-gray-400 text-center mt-10">Welcome to BitCart,</p>
+            <p class="text-3xl text-gray-400 text-center p-6">
+                your ultimate destination for digital gaming! We’re here to redefine your gaming experience with an
+                extensive collection of the latest and most popular games across genres. Whether you’re into action,
+                strategy, RPG, or indie games, BitCart has something for every gamer.
 
+                At BitCart, we’re passionate about making gaming accessible, exciting, and community-driven. Just like
+                you, we’re gamers at heart, which is why we prioritize user-friendly design, secure transactions, and
+                exclusive deals to bring you closer to the games you love.
+            </p>
+            <p class="text-5xl mt-7 text-white text-center">Why Choose BitCart?</p>
+            <ul class="text-3xl text-gray-400 text-center mt-6 list-disc">
+                <li>We have a vast library of over 10,000 games from renowned developers and indie studios alike.</li>
+                <li>Our platform is designed to be user-friendly, making it easy to discover, purchase, and play the games
+                    you love.</li>
+                <li>We provide a secure and reliable payment system, ensuring your transactions are safe and hassle-free.</li>
+                <li>Our community is the heart of BitCart, and we strive to create a welcoming and inclusive environment
+                    for all gamers.</li>
+                <li>Exclusive deals, discounts, and bundles are available to all our customers, ensuring you get the best
+                    value for your money.</li>
+            </ul>
+        </main>
     </section>
 
-    
+    <!-- Footer -->
+    <footer class="bg-black text-white mt-14">
+        <div
+            class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
+            <img src="../../imges/Logo.webp" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Company Info</a>
+                    <a>Careers</a>
+                    <a>Press</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Help Center</a>
+                    <a>Contact Us</a>
+                    <a>Refund Policy</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Legal Notices</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
+        <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">Twitter</a>
+        </div>
+        <div class="text-center mt-6 text-xl">
+            <p>© 2024 BitCart. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
