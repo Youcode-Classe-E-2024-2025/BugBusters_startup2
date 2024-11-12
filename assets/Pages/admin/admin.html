@@ -3,10 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-<body>
+<body class="bg-zinc-800 font-jura">
+    <section class="flex">
+        <!-- side bare -->
+        <div class="bg-black">
+            <div class="grid justify-items-start h-48 gap-2">
+                <img class="mb-8" src="../../imges/admin_logo.png" alt="" width="350">
+                <a href="#" class="text-white w-40 text-center">Dashboard</a>
+                <a href="product-management.html" class="text-white w-60 text-center">Product Management</a>
+                <a href="contact-messages.html" class="text-white w-52 text-center"> Contact Messages</a>
+            </div>
+        </div>
+        <!-- end of side bare -->
+        <!-- main content -->
+        <main class="justify-items-center w-[100vw] grid gap-4">
+            <!-- dashbord status -->
+            <div class="flex gap-44 bg-zinc-600 text-white mt-6 text-3xl rounded-lg p-14">
+                <div class="justify-items-center">
+                    <p>total Games</p>
+                    <p id="total-games" class="text-6xl">50</p>
+                </div>
+                <div class="justify-items-center">
+                    <p>Installed</p>
+                    <p class="text-6xl">60</p>
+                </div>
+                <div class="justify-items-center">
+                    <p>Incomme</p>
+                    <p class="text-6xl">50<span class="text-xl">$US</span></p>
+                </div>
+            </div>
+            <!-- end dashbord status -->
+            <img src="../../imges/dashbord.png" alt="" width="700px"> <!-- status image -->
+        </main>
+        <!-- end of main content -->
+    </section>
+    <footer class="bg-black text-white">
+        <div class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
+            <img src="../../imges/admin_logo.png" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Company Info</a>
+                    <a>Careers</a>
+                    <a>Press</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Help Center</a>
+                    <a>Contact Us</a>
+                    <a>Refund Policy</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Legal Notices</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
+        <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">Twitter</a>
+        </div>
+        <div class="text-center mt-6 text-xl">
+            <p>© 2024 BitCart. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script  src="./dashboard.js"></script>
+    <script src="../../js/script.js"></script>
     
 </body>
 </html>
