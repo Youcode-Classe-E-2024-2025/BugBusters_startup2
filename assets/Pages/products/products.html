@@ -6,61 +6,70 @@
     <title>products</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-<body>
-    <section class=" flex">
-        <!-- side bare -->
-        <div class="bg-black h-screen">
-            <div class="grid justify-items-start h-48 gap-2">
-                <img class="mb-8" src="../../imges/admin_logo.png" alt="" width="350">
-                <button class="text-white w-40">Dashboard</button>
-                <button class="text-white w-60">Product Management</button>
-                <button class="text-white w-52"> Contact Messages</button>
+<body class="bg-primary bg-opacity-90">
+    <section class="flex flex-row">
+        <!-- Sidebar -->
+        <div class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0">
+            <div>
+                <img src="../../imges/Logo.webp" alt="Logo BitCart">
+                <ul>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <button class="w-full bg-gray-600 py-2 text-white rounded mb-4">Contact</button>
+                <button class="w-full bg-red-500 py-2 text-white rounded">Déconnecté</button>
             </div>
         </div>
-        <!-- end of side bare -->
-        <!-- main content -->
-        <main class="
-         flex flex-col m-[10px] justify-items-center w-[100vw]">
-            <!-- dir products hna -->
-                <div class="flex mx-[30px] my-[10px]">
-                    <input type="text" placeholder="Search" class="border rounded-3xl mr-[55%] w-[40%]">
-                    <p class="w-[30px]"><img class="" src="./panier.png" alt=""></p>
+        <!-- End of sidebar -->
+
+        <!-- Main content -->
+        <main class="flex flex-col m-[10px] justify-items-center w-[100vw] ml-[25%]"> <!-- Changed left margin to ml-[25%] -->
+            <div class="grid grid-cols-12">
+                <input type="text" placeholder="Search" class="w-full col-span-4 p-2 rounded-xl bg-gray-500 h-14 text-gray-300 focus:outline-none m-[55px] mt-4" />
+                <img src="../../imges/search.png" class="h-14 z-10 mt-4 ml-3" alt="Search icon">
+                <img src="../../imges/carte.png" class="h-10 col-start-12 mt-4" alt="Cart icon">
+            </div>
+            <div class=" w-[100%] my-4 grid justify-items-center">
+                <img class="w-[95%] h-full object-cover rounded-3xl" src="./../../imges/FC25.png" alt="">
+            </div>
+            <div class="flex justify-end space-x-4 p-4 w-">
+                <select name="filter" class="border border-black px-2 w-[15%]">
+                    <option value="nsd">deb</option>
+                    <option value="ghj">dsbckd</option>
+                    <option value="ghj">sjndkj</option>
+                </select>
+                <select name="filter" class="border border-black px-2 w-[15%]">
+                    <option value="nsd">deb</option>
+                    <option value="ghj">dsbckd</option>
+                    <option value="ghj">sjndkj</option>
+                </select>
+            </div>
+            <section class="flex justify-center align-middle w-full flex-wrap">
+                <div class="w-[25%] mx-10 mb-10">
+                    <img src="./../../imges/products/14.webp" alt="">
+                    <p class="text-gray-600">edition ultimate</p>
+                    <p class="text-gray-600">red dead redemption 2</p>
+                    <p class="text-gray-600">red dead redemption 2 zehezhyv</p>
                 </div>
-                <div class=" bg-black w-[100%] h-[40%] my-4"><img class="w-[100%] h-[100%]" src="./../../imges/products/13.webp" alt=""></div>
-                <div class="flex justify-end space-x-4 p-4">
-                    <select name="filter" id="" class="border border-black px-2 w-[15%]">
-                        <option value="nsd">deb</option>
-                        <option value="ghj">dsbckd</option>
-                        <option value="ghj">sjndkj</option>
-                    </select>
-                    <select name="filter" id="" class="border border-black px-2 w-[15%]">
-                        <option value="nsd">deb</option>
-                        <option value="ghj">dsbckd</option>
-                        <option value="ghj">sjndkj</option>
-                    </select>
+                <div class="w-[25%] mx-10 mb-10">
+                    <img src="./../../imges/products/14.webp" alt="">
+                    <p class="text-gray-600">edition ultimate</p>
+                    <p class="text-gray-600">red dead redemption 2</p>
+                    <p class="text-gray-600">red dead redemption 2 zehezhyv</p>
                 </div>
-                <section class="flex justify-center align-middle w-[100%] flex-wrap">
-                    <div class="w-[25%] mx-10">
-                        <img src="./../../imges/products/14.webp" alt="">
-                        <p class="text-gray-600">edition ultimate</p>
-                        <p class="text-gray-600">red deadre demption 2</p>
-                        <p class="text-gray-600">red deadre demption 2 zehezhyv</p>
-                    </div>
-                    <div class="w-[25%] mx-10">
-                        <img src="./../../imges/products/14.webp" alt="">
-                        <p class="text-gray-600">edition ultimate</p>
-                        <p class="text-gray-600">red deadre demption 2</p>
-                        <p class="text-gray-600">red deadre demption 2 zehezhyv</p>
-                    </div>
-                    <div class="w-[25%] mx-10">
-                        <img src="./../../imges/products/14.webp" alt="">
-                        <p class="text-gray-600">edition ultimate</p>
-                        <p class="text-gray-600">red deadre demption 2</p>
-                        <p class="text-gray-600">red deadre demption 2 zehezhyv</p>
-                    </div>
-                </section>
-            </main>
-        <!-- end of main content -->
+                <div class="w-[25%] mx-10 mb-10">
+                    <img src="./../../imges/products/14.webp" alt="">
+                    <p class="text-gray-600">edition ultimate</p>
+                    <p class="text-gray-600">red dead redemption 2</p>
+                    <p class="text-gray-600">red dead redemption 2 zehezhyv</p>
+                </div>
+            </section>
+        </main>
+        <!-- End of main content -->
+
     </section>
 
     <script src="../../js/products.js"></script>
