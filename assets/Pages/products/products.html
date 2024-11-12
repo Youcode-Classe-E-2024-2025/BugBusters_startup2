@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
     <link rel="stylesheet" href="../../css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/imges/favicon/favicon-32x32.png" type="image/x-icon">
 </head>
-<body>
-    
+<body class="bg-primary bg-opacity-90 font-jura">
+    <section class="flex flex-row">
+       <!-- Sidebar -->
+       <div class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0">
+        <div class="-mt-6">
+            <img src="../../imges/Logo.webp" alt="Logo BitCart">
+            <ul class="text-center text-[25px]">
+                <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
+                <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
+                <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <button class="w-full bg-gray-600 py-2 text-white rounded mb-4">Contact</button>
+            <button class="w-full bg-red-500 py-2 text-white rounded">Déconnecté</button>
+        </div>
+    </div>
+        <!-- End of sidebar -->
+
+        <!-- Main content -->
+        <main class="flex flex-col m-[10px] justify-items-center w-[100vw] ml-[25%]">
+            <div class="grid grid-cols-12">
+                <input type="text" placeholder="Search" class="w-full col-span-4 p-2 rounded-xl bg-gray-500 h-14 text-gray-300 focus:outline-none m-[55px] mt-4" />
+                <img src="../../imges/search.png" class="h-14 z-10 mt-4 ml-3" alt="Search icon">
+                <img src="../../imges/carte.png" class="h-10 col-start-12 mt-4" alt="Cart icon">
+            </div>
+            <div class=" w-[100%] my-4 grid justify-items-center">
+                <img class="w-[95%] h-full object-cover rounded-3xl" src="./../../imges/FC25.png" alt="">
+            </div>
+            <div class="flex justify-end space-x-4 p-4 w-">
+                <select name="filter" class="border border-black px-2 w-52 rounded-xl">
+                    <option value="nsd">deb</option>
+                    <option value="ghj">dsbckd</option>
+                    <option value="ghj">sjndkj</option>
+                </select>
+                <select name="filter" class="border border-black px-2 w-52 h-12">
+                    <option value="nsd">deb</option>
+                    <option value="ghj">dsbckd</option>
+                    <option value="ghj">sjndkj</option>
+                </select>
+            </div>
+            <section id="productsPageList" class="grid justify-items-center align-middle w-full grid-cols-3"></section>
+        </main>
+        <!-- End of main content -->
+
+    </section>
+
+    <script src="../../js/products.js"></script>
+    <script src="../../js/script.js"></script>
 </body>
 </html>
