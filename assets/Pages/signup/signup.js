@@ -24,14 +24,12 @@ signupForm.addEventListener('submit', function(event) {
         alert("Les mots de passe ne correspondent pas.");
         return;
     }
-
     // Vérifier si l'email est valide
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailPattern.test(email)) {
         alert("Veuillez entrer un email valide.");
         return;
     }
-
     // Pour plus de sécurité, utilisez une méthode de stockage sécurisé dans la vraie vie (par exemple via une API).
     localStorage.setItem('userEmail', email);
     localStorage.setItem('userPassword', password);
