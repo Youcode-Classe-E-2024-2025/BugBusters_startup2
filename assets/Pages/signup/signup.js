@@ -1,8 +1,8 @@
 // Récupérer les éléments du formulaire
 const signupForm = document.querySelector('form');
 const emailInput = document.querySelector('input[type="email"]');
-const passwordInput = document.querySelector('input[type="password"]:nth-of-type(1)');
-const confirmPasswordInput = document.querySelector('input[type="password"]:nth-of-type(2)');
+const passwordInput = document.querySelector('input[name="password"]');
+const confirmPasswordInput = document.querySelector('input[name="confirmPassword"]');
 
 // Fonction pour gérer l'inscription
 signupForm.addEventListener('submit', function(event) {
@@ -40,5 +40,6 @@ signupForm.addEventListener('submit', function(event) {
     alert("Inscription réussie !");
     
     // Rediriger l'utilisateur vers la page de connexion après l'inscription (facultatif)
-    window.location.href = "login.html"; // Remplacez "login.html" par l'URL de votre page de connexion
+    window.location.href = "../login/login.html"
+    // Remplacez "login.html par l'URL de votre page de connexion
 });
