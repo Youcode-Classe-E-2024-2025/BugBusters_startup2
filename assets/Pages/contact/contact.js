@@ -1,4 +1,3 @@
-// contact.js
 
 document.addEventListener("DOMContentLoaded", () => {
     // Sélection des éléments nécessaires

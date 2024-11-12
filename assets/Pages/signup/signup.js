@@ -18,7 +18,6 @@ signupForm.addEventListener('submit', function(event) {
         alert("Veuillez remplir tous les champs.");
         return;
     }
-
     // Vérifier si les mots de passe correspondent
     if (password !== confirmPassword) {
         alert("Les mots de passe ne correspondent pas.");
@@ -38,7 +37,6 @@ signupForm.addEventListener('submit', function(event) {
 
     // Afficher un message de confirmation
     alert("Inscription réussie !");
-    
     // Rediriger l'utilisateur vers la page de connexion après l'inscription (facultatif)
     window.location.href = "../login/login.html"
     // Remplacez "login.html par l'URL de votre page de connexion
