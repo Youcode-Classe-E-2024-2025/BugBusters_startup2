@@ -54,6 +54,91 @@
             width: 100%;
             max-width: 100%;
         }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #391ae9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+
+        .chat-popup header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .messages {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding-right: 5px;
+        }
+
+        .message {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .user-message {
+            color: blue;
+            opacity: 0.8;
+        }
+
+        .bot-message {
+            color: green;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            background-color: #391ae9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #391ae9;
+        }
     </style>
 
 </head>
@@ -192,6 +277,22 @@
             </div>
         </div>
     </main>
+
+    <!-- chatbot -->
+    <div>
+        <!-- Chat Icon -->
+        <div class="chat-icon" onclick="toggleChatPopup()">💬</div>
+
+        <!-- Chat Popup -->
+        <div class="chat-popup" id="chatPopup">
+            <header>Ask BitCart Bot</header>
+            <div class="messages" id="messages"></div>
+            <input type="text" id="chatInput" placeholder="Type your question here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+        <script src="assets/js/bot.js"></script>
+    </div>
 
     <footer class="bg-black text-white mt-14 ">
         <div
