@@ -123,22 +123,6 @@
             border: 1px solid #ddd;
             font-size: 14px;
         }
-
-        button {
-            margin-top: 10px;
-            width: 100%;
-            padding: 10px;
-            background-color: #391ae9;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        button:hover {
-            background-color: #391ae9;
-        }
     </style>
 
 </head>
@@ -281,14 +265,14 @@
     <!-- chatbot -->
     <div>
         <!-- Chat Icon -->
-        <div class="chat-icon" onclick="toggleChatPopup()">💬</div>
+        <div class="chat-icon" id="btnnn" onclick="toggleChatPopup()">💬</div>
 
         <!-- Chat Popup -->
         <div class="chat-popup" id="chatPopup">
             <header>Ask BitCart Bot</header>
             <div class="messages" id="messages"></div>
             <input type="text" id="chatInput" placeholder="Type your question here...">
-            <button onclick="sendMessage()">Send</button>
+            <button id="btnnn" class="pl-6 pr-6 pt-2 pb-2 bg-blue-600 rounded-lg text-white mt-2 items-center" onclick="sendMessage()">Send</button>
         </div>
 
         <script src="assets/js/bot.js"></script>
