@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page d'inscription à notre plateforme.">
     <title>Sign-Up Page</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
@@ -11,83 +12,84 @@
         <!-- Header -->
         <div class="flex justify-between items-center mb-8">
             <div class="flex items-center space-x-2">
-                <!-- <img src="../../imges/Logo.webp" alt="Logo" class="w-10 h-10"> -->
+                <!-- Logo -->
                 <img src="../../imges/Logo.webp" alt="Logo" class="h-10">
-
             </div>
             <nav class="space-x-8 text-lg">
                 <a href="#" class="hover:text-gray-300">Home</a>
                 <a href="#" class="hover:text-gray-300">Community</a>
                 <a href="#" class="hover:text-gray-300">Top Sellers</a>
             </nav>
-            <button class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Login</button>
+            <a href="../login/login.html"><button class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600" >Login</button></a>
         </div>
 
         <!-- Sign-Up Section -->
         <div class="flex justify-center items-center">
-            <!-- Illustration -->
+            <!-- Illustration (visible sur grand écran) -->
             <div class="w-1/3 hidden lg:block">
                 <img src="../../imges/login.png" alt="Illustration" class="w-full">
             </div>
 
-            <!-- Form -->
+            <!-- Formulaire -->
             <div class="bg-black p-10 rounded-lg shadow-md w-full max-w-md">
                 <h2 class="text-3xl font-bold mb-6 text-center">Sign-Up Page</h2>
-                
                 <form>
-                    <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="password" placeholder="Password" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="password" placeholder="Confirm Password" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="email" placeholder="Votre Email" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" placeholder="Mot de Passe" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" placeholder="Confirmer le Mot de Passe" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     
                     <div class="flex items-center mb-4">
                         <input type="checkbox" id="terms" class="mr-2">
                         <label for="terms" class="text-sm">
-                            You agree to our <a href="#" class="text-blue-500 hover:underline">Privacy Policy</a> and <a href="#" class="text-blue-500 hover:underline">Terms of Service</a>.
+                            Vous acceptez notre <a href="#" class="text-blue-500 hover:underline">Politique de confidentialité</a> et nos <a href="#" class="text-blue-500 hover:underline">Conditions d'utilisation</a>.
                         </label>
                     </div>
                     
-                    <button type="submit" class="w-full bg-red-500 py-3 rounded text-lg font-semibold hover:bg-red-600">Sign-Up</button>
+                    <button type="submit" class="w-full bg-red-500 py-3 rounded text-lg font-semibold hover:bg-red-600">S'inscrire</button>
                 </form>
             </div>
         </div>
     </div>
-    <footer class="bg-black text-white mt-14 ">
+
+    <footer class="bg-black text-white mt-14">
         <div class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
             <img src="../../imges/Logo.webp" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
             <div class="mt-14 cursor-pointer max-sm:mt-0">
-                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <h3 class="text-xl mb-3 max-md:text-[10px]">À propos</h3>
                 <div class="flex flex-col max-md:hidden">
-                    <a>Company Info</a>
-                    <a>Careers</a>
-                    <a>Press</a>
+                    <a href="#">Infos sur l'entreprise</a>
+                    <a href="#">Carrières</a>
+                    <a href="#">Presse</a>
                 </div>
             </div>
             <div class="mt-14 cursor-pointer max-sm:mt-0">
-                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Support client</h3>
                 <div class="flex flex-col max-md:hidden">
-                    <a>Help Center</a>
-                    <a>Contact Us</a>
-                    <a>Refund Policy</a>
+                    <a href="#">Centre d'aide</a>
+                    <a href="#">Contactez-nous</a>
+                    <a href="#">Politique de remboursement</a>
                 </div>
             </div>
             <div class="mt-14 cursor-pointer max-sm:mt-0">
-                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Légal & Politiques</h3>
                 <div class="flex flex-col max-md:hidden">
-                    <a>Privacy Policy</a>
-                    <a>Cookie Policy</a>
-                    <a>Legal Notices</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Politique sur les cookies</a>
+                    <a href="#">Mentions légales</a>
                 </div>
             </div>
         </div>
         <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
         <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
-            <a href="">Facebook</a>
-            <a href="">Instagram</a>
-            <a href="">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
         <div class="text-center mt-6 text-xl">
-            <p>© 2024 BitCart. All Rights Reserved.</p>
+            <p>© 2024 BitCart. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script src="signup.js"></script>
 </body>
 </html>
