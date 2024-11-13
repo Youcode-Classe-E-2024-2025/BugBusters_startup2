@@ -8,20 +8,57 @@
     <link rel="stylesheet" href="../../css/output.css">
 </head>
 <body class="bg-black text-white font-sans">
-    <div class="container mx-auto p-6">
-        <!-- Header -->
-        <div class="flex justify-between items-center mb-8">
-            <div class="flex items-center space-x-2">
-                <!-- Logo -->
-                <img src="../../imges/Logo.webp" alt="Logo" class="h-10">
+    <!-- navbar -->
+    <header>
+        <nav>
+            <ul class="flex flex-row gap-4 justify-between items-center ml-6 mr-10 font-medium">
+                <img src="../../imges/Logo.webp" class="h-20 w-auto" alt="Logo">
+
+                <!-- Navigation Links for Large Screens -->
+                <div id="navLinks" class="hidden lg:flex flex-row gap-12 items-center">
+                    <li class="text-white"><a href="#">Home</a></li>
+                    <li class="text-white"><a href="#">Community</a></li>
+                    <li class="text-white"><a href="#sellers-section">Top Sellers</a></li>
+                </div>
+                <div id="authLinks" class="hidden lg:flex flex-row gap-7 items-center">
+                    <a class="text-white hidden" href="../signup/signup.html">Sign Up</a>
+                    <a class="text-white bg-slate-600 rounded-lg pl-4 pr-4 pt-1 pb-1" href="../login/login.html">Login</a>
+                </div>
+
+                <!-- Burger Icon for Small Screens -->
+                <button id="burgerMenu" class="lg:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden flex items-center justify-center bg-primary">
+                <ul id="mobileMenu" class="flex flex-col gap-8 items-center font-medium text-white">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Top Sellers</a></li>
+                    <div class="flex flex-row gap-7 items-center mb-4">
+                        <a class="text-white hidden" href="../signup/signup.html">Sign Up</a>
+                        <a class="text-white bg-slate-600 rounded-lg pl-4 pr-4 pt-1 pb-1" href="../login/login.html">Login</a>
+                    </div>
+                </ul>
             </div>
-            <nav class="space-x-8 text-lg">
-                <a href="#" class="hover:text-gray-300">Home</a>
-                <a href="#" class="hover:text-gray-300">Community</a>
-                <a href="#" class="hover:text-gray-300">Top Sellers</a>
-            </nav>
-            <a href="../login/login.html"><button class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600" >Login</button></a>
-        </div>
+
+        </nav>
+        <script>
+            const burgerMenu = document.getElementById('burgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            burgerMenu?.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
+    </header>
+    <div class="container mx-auto p-6">
 
         <!-- Sign-Up Section -->
         <div class="flex justify-center items-center">
