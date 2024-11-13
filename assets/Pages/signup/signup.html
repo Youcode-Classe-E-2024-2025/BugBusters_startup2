@@ -59,21 +59,19 @@
         </script>
     </header>
     <div class="container mx-auto p-6">
-
         <!-- Sign-Up Section -->
         <div class="flex justify-center items-center">
             <!-- Illustration (visible sur grand écran) -->
             <div class="w-1/3 hidden lg:block">
                 <img src="../../imges/login.png" alt="Illustration" class="w-full">
             </div>
-
             <!-- Formulaire -->
             <div class="bg-black p-10 rounded-lg shadow-md w-full max-w-md">
                 <h2 class="text-3xl font-bold mb-6 text-center">Sign-Up Page</h2>
                 <form>
-                    <input type="email" placeholder="Votre Email" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="password" placeholder="Mot de Passe" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="password" placeholder="Confirmer le Mot de Passe" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="email" name="email"  placeholder="Votre Email" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <input type="password"  name="password" placeholder="Mot de Passe" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirmer le Mot de Passe" class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     
                     <div class="flex items-center mb-4">
                         <input type="checkbox" id="terms" class="mr-2">
