@@ -49,12 +49,13 @@
             </div>
             <div class="grid gap-2 text-l">
                 <input id="addTitle" class="p-3 border-black border" type="text" placeholder="Title">
+                <input id="addcategory" class="p-3 border-black border" type="text" placeholder="Category">
                 <textarea id="addShortInfo" class="p-3 border-black border resize-none" name="" placeholder="short info" rows="2" class="resize-none"></textarea>
                 <textarea id="addLongDescription" class="p-3 border-black border  resize-none" name="" placeholder="long description" rows="4" class="resize-none "></textarea>
                 <div class="flex justify-between">
-                    <input id="addDescount" class="w-36 border-black border text-center" type="text" placeholder="Descount">
-                    <input id="addPrice" class="w-36 p-4 text-center border-black border" type="text" placeholder="price">
-                    <input class="w-36 text-center border-black border" type="text" placeholder="Now Price">
+                    <input id="addDescount" class="w-32 border-black border text-center" type="text" placeholder="Discount">
+                    <input id="addPrice" class="w-32 p-4 text-center border-black border" type="text" placeholder="price">
+                    <input class="w-32 text-center border-black border" type="text" placeholder="Now Price">
                 </div>
                 <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
                     <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
@@ -67,16 +68,17 @@
         <form id="editForm" class="bg-white justify-self-center p-10">
             <div class="grid gap-2 text-l">
                 <input id="editTitle" class="p-3 border-black border" type="text" placeholder="Title">
+                <input id="editCategory" class="p-3 border-black border" type="text" placeholder="Category">
                 <textarea id="editShortInfo" class="p-3 border-black border resize-none" name="" placeholder="short info" rows="2" class="resize-none"></textarea>
                 <textarea id="editLongDescription" class="p-3 border-black border  resize-none" name="" placeholder="long description" rows="4" class="resize-none "></textarea>
                 <div class="flex justify-between">
                     <input id="editDescount" class="w-36 border-black border text-center" type="text" placeholder="Descount">
                     <input id="editPrice" class="w-36 p-4 text-center border-black border" type="text" placeholder="price">
-                    <input class="w-36 text-center border-black border" type="text" placeholder="Now Price">
+                    <input id="newprice" class="w-36 text-center border-black border" type="text" placeholder="Now Price">
                 </div>
                 <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
                     <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
-                    <button id="editGameBtn" onclick="editGame(this.getAttribute('data-id'))" class="h-10 w-32 text-xl bg-black text-white">Add</button>
+                    <button id="editGameBtn" onclick="editGame(this.getAttribute('data-id'))" class="h-10 w-32 text-xl bg-black text-white">Edit</button>
                 </div>
             </div>
         </form>
