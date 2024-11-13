@@ -878,6 +878,10 @@ video {
   width: 13rem;
 }
 
+.w-72 {
+  width: 18rem;
+}
+
 .min-w-48 {
   min-width: 12rem;
 }
@@ -1208,6 +1212,11 @@ video {
 
 .bg-opacity-35 {
   --tw-bg-opacity: 0.35;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
 }
 
 .bg-gradient-to-r {
