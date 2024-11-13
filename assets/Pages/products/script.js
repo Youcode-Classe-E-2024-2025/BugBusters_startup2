@@ -5,7 +5,7 @@ for (let n = 1; n <= Object.keys(games).length; n++) {
     document.getElementById("productsPageList").innerHTML+=
                 `<section id="productsPageList" class="flex justify-center align-middle w-full flex-wrap">
                     <div class="w-72 mx-10 mb-10 text-2xl">
-                        <img src="${games[Object.keys(games)[n-1]].images}" alt="${games[Object.keys(games)[n-1]].shortDescription}">
+                        <img src="${games[Object.keys(games)[n-1]].images[0]}" alt="${games[Object.keys(games)[n-1]].shortDescription}">
                         <p class="text-gray-600"> Édition </p>
                         <p class="text-white">${games[Object.keys(games)[n-1]].title}</p>
                         <div class="flex gap-2">

@@ -58,7 +58,7 @@ function renderGameList() {
         document.getElementById("pmList").innerHTML += `
             <div class="flex bg-white text-black text-3xl rounded-3xl p-6 h-min">
                 <div class="justify-items-center">
-                    <img class="ml-3" src="${games[Object.keys(games)[n-1]].images}" alt="${games[Object.keys(games)[n-1]].shortDescription}" width="100">
+                    <img class="ml-3" src="${games[Object.keys(games)[n-1]].images[0]}" alt="${games[Object.keys(games)[n-1]].shortDescription}" width="100">
                 </div>
                 <div class="min-w-[42rem] ml-6">
                     <div class="grid gap-3">
