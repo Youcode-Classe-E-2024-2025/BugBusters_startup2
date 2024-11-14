@@ -9,7 +9,7 @@ function gameAdd(){
     let newKey= "game"+newIndex;
     let newGame={[newKey]:{
         title: document.forms["addForm"]["addTitle"].value,
-        category: "Action-Adventure",
+        category: document.forms["addForm"]["addcategory"].value,
         images:[document.forms["addForm"]["fileUpload"].files[0].name],
         shortDescription: document.forms["addForm"]["addShortInfo"].value,
         longDescription: document.forms["addForm"]["addLongDescription"].value,
@@ -30,16 +30,18 @@ function delGame(gamid) {
 }
 function vGame(gamid){
     document.forms["editForm"]["editTitle"].value =games[gamid].title;
+    document.forms["editForm"]["editCategory"].value =games[gamid].category;
     document.forms["editForm"]["editShortInfo"].value =games[gamid].shortDescription;
     document.forms["editForm"]["editLongDescription"].value =games[gamid].longDescription;
     document.forms["editForm"]["editPrice"].value =games[gamid].price;
     document.forms["editForm"]["editDescount"].value =games[gamid].discount;
+    document.forms["editForm"]["newprice"].value = ((1-(games[gamid].discount/100))*games[gamid].price).toFixed(2);
     
 }
 function editGame(gamid){
     games[gamid]={
         title: document.forms["editForm"]["editTitle"].value,
-        category: "Action-Adventure",
+        category: document.forms["editForm"]["editCategory"].value,
         images:games[gamid].images,
         shortDescription: document.forms["editForm"]["editShortInfo"].value,
         longDescription: document.forms["editForm"]["editLongDescription"].value,
