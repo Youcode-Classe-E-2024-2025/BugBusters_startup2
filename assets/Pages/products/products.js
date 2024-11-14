@@ -10,7 +10,7 @@ function displayItems() {
 
     gamesArray.forEach(game => {
         productsList.innerHTML += `
-            <a class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
+            <a onclick="detailGen(${game})" class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
                 <div class="text-xl">
                     <img src="${game.images}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>
@@ -22,7 +22,13 @@ function displayItems() {
                     </div>
                 </div>
             </a>`;
+            console.log(game);
     });
+}
+
+function detailGen(game){
+    return game ;
+
 }
 
 
@@ -63,8 +69,17 @@ document.getElementById('sortPrex').addEventListener('change', function() {
         sortItemsByTitle();
     }
 });
-displayItems();
 
+document.getElementById('sortPrex').addEventListener('change', function() {
+    const selectedOption = this.value;
+    if (selectedOption === 'price') {
+        sortItemsByPrice();
+    } else if (selectedOption === 'title') {
+        sortItemsByTitle();
+    }
+});
+
+displayItems();
 
 
 // select 
