@@ -7,10 +7,10 @@ function displayItems() {
     productsList.innerHTML = ''; 
 
     const gamesArray = Object.values(games);
-
+    t=0
     gamesArray.forEach(game => {
         productsList.innerHTML += `
-            <a onclick="detailGen(${game})" class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
+            <a onclick="detailGen(${t}),event.preventDefault()" id=${t} class="product justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
                 <div class="text-xl">
                     <img src="${game.images}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>
@@ -22,13 +22,14 @@ function displayItems() {
                     </div>
                 </div>
             </a>`;
-            console.log(game);
+            t++;
     });
 }
 
-function detailGen(game){
-    return game ;
-
+function detailGen(ga){
+    // console.log(Object.values(games)[ga]);
+    const url = `/assets/Pages/product_details/product_details.html?id=${ga}`;  // Create the URL with the ID as a query parameter
+    window.location.href = url;  // Redirect to the new page with the ID in the URL
 }
 
 
