@@ -2,8 +2,8 @@
 let text = localStorage.getItem("productData");
 games = JSON.parse(text);
 
+
 function displayItems() {
-    console.log("Displaying games:", games);
     const productsList = document.getElementById("productsPageList");
     productsList.innerHTML = ''; 
 
@@ -12,7 +12,7 @@ function displayItems() {
     gamesArray.forEach(game => {
         productsList.innerHTML += `
             <a class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
-                <div id="product" class="text-xl">
+                <div id="t" class="text-xl">
                     <img src="${game.images[0]}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>
                     <p class="text-white">${game.title}</p>
@@ -170,16 +170,36 @@ function addToCart(item) {
 
 
 function filtrerJeux() {
+    games = JSON.parse(text);
     const category = document.getElementById("categoryFilter").value;
-    const filteredGames = category === "all" 
+    const filteredGames = category === "all"
         ? games 
         : Object.fromEntries(
             Object.entries(games).filter(([_, game]) => game.category === category)
         );
-        games = filteredGames;
-        displayItems();
+
+    console.log("Selected category:", category); 
+    console.log("Filtered games:", filteredGames); 
+
+    games = filteredGames;
+    displayItems(); 
 }
-
 document.getElementById("categoryFilter").addEventListener("change", filtrerJeux);
-
 displayItems();
+
+
+
+// function filtrerJeux() {
+//     const category = document.getElementById("categoryFilter").value;
+//     const filteredGames = category === "all" 
+//         ? games 
+//         : Object.fromEntries(
+//             Object.entries(games).filter(([ game]) => game.category === category)
+//         );
+//         games = filteredGames;
+//         displayItems();
+// }
+
+// document.getElementById("categoryFilter").addEventListener("change", filtrerJeux);
+
+// displayItems();
