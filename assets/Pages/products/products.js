@@ -27,9 +27,13 @@ function displayItems() {
 }
 
 function detailGen(ga){
-    // console.log(Object.values(games)[ga]);
-    const url = `/assets/Pages/product_details/product_details.html?id=${ga}`;  // Create the URL with the ID as a query parameter
-    window.location.href = url;  // Redirect to the new page with the ID in the URL
+    if(window.location.href === `https://youcode-classe-e-2024-2025.github.io/BugBusters_startup2/assets/Pages/products/products.html`){
+        const url = `/BugBusters_startup2/assets/Pages/product_details/product_details.html?id=${ga}`;
+        window.location.href = url;
+    }else{
+        const url = `/assets/Pages/product_details/product_details.html?id=${ga}`;
+        window.location.href = url;
+    }
 }
 
 
