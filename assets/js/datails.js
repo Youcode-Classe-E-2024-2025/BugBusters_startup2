@@ -7,7 +7,7 @@ console.log(Object.values(games)[someParam].title);
 
 document.getElementById("gamedetail").innerHTML += `
     <div class="flex">
-      <!-- Game Image Carousel -->
+      <!-- game image carousel -->
       <div id="carousel" class="relative w-80 overflow-hidden">
         <div id="carousel-inner" class="flex transition-transform duration-500">
           ${[1, 2, 3]
@@ -15,12 +15,12 @@ document.getElementById("gamedetail").innerHTML += `
               () =>
                 `<img src="${
                   Object.values(games)[someParam].images[0]
-                }" alt="Game Cover" class="w-80 h-auto rounded-lg" />`
+                }" alt="game gover" class="w-80 h-auto rounded-lg" />`
             )
             .join("")}
         </div>
 
-        <!-- Navigation Buttons -->
+        <!-- navigation buttons -->
         <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black text-white px-3 py-2 rounded-l">
           &lt;
         </button>
@@ -39,7 +39,7 @@ document.getElementById("gamedetail").innerHTML += `
           <p>Release Date: ${Object.values(games)[someParam].releaseDate}</p>
         </div>
 
-        <!-- Price Section -->
+        <!-- price section -->
         <div class="flex items-center mt-4 space-x-3">
           <span class="bg-red-600 text-white px-2 py-1 rounded text-3xl p-3">
             -${Object.values(games)[someParam].discount}%
@@ -55,7 +55,7 @@ document.getElementById("gamedetail").innerHTML += `
           </span>
         </div>
 
-        <!-- Buttons -->
+        <!-- buttons -->
         <div class="flex space-x-4 mt-4">
           <button class="w-full bg-black hover:bg-gray-900 text-white py-2 px-4 rounded text-2xl">
             Add To Cart
@@ -67,7 +67,7 @@ document.getElementById("gamedetail").innerHTML += `
       </div>
     </div>
 
-    <!-- Description Section -->
+    <!-- description section -->
     <h2 class="text-3xl mt-10">Description</h2>
     <p class="text-2xl mt-4 ml-10">
       ${Object.values(games)[someParam].longDescription}
