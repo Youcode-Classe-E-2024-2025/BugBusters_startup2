@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-<body>
-    
+
+<body class="bg-primary text-white font-jura">
+    <!-- navbar -->
+    <header>
+        <nav>
+            <ul class="flex flex-row gap-4 justify-between items-center ml-6 mr-10 font-medium">
+                <img src="../../imges/Logo.webp" class="h-20 w-auto" alt="Logo">
+
+                <!-- Navigation Links for Large Screens -->
+                <div id="navLinks" class="hidden lg:flex flex-row gap-12 items-center">
+                    <li class="text-white"><a href="../../../index.html">Home</a></li>
+                    <li class="text-white"><a href="#">Community</a></li>
+                    <li class="text-white"><a href="#sellers-section">Top Sellers</a></li>
+                </div>
+                <div id="authLinks" class="hidden lg:flex flex-row gap-7 items-center">
+                    <a class="text-white" href="../signup/signup.html">Sign Up</a>
+                    <a class="text-white bg-slate-600 rounded-lg pl-4 pr-4 pt-1 pb-1 hidden" href="#">Login</a>
+                </div>
+
+                <!-- Burger Icon for Small Screens -->
+                <button id="burgerMenu" class="lg:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden flex items-center justify-center bg-primary">
+                <ul id="mobileMenu" class="flex flex-col gap-8 items-center font-medium text-white">
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Top Sellers</a></li>
+                    <div class="flex flex-row gap-7 items-center mb-4">
+                        <a class="text-white" href="../signup/signup.html">Sign Up</a>
+                        <a class="text-white bg-slate-600 rounded-lg pl-4 pr-4 pt-1 pb-1 hidden" href="#">Login</a>
+                    </div>
+                </ul>
+            </div>
+
+        </nav>
+        <script>
+            const burgerMenu = document.getElementById('burgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            burgerMenu?.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
+    </header>
+
+    <div class="container mx-auto p-6">
+        <!-- Login Section -->
+        <div class="flex justify-center items-center">
+            <!-- Illustration -->
+            <div class="w-1/3 hidden lg:block">
+                <img src="../../imges/login.png" alt="Illustration" class="w-full">
+            </div>
+            <!-- Form -->
+            <div id="loginFormSection" class="bg-black p-10 rounded-lg shadow-md w-full max-w-md">
+                <h2 class="text-3xl font-bold mb-6 text-center">Login Page</h2>
+
+                <form id="loginForm">
+                    <input type="email" id="email" placeholder="Your Email"
+                        class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" id="password" placeholder="Password"
+                        class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                    <div class="text-right mb-4">
+                        <a href="#" id="forgotPasswordLink" class="text-blue-500 hover:underline">Forgot Password?</a>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" id="terms" class="mr-2">
+                        <label for="terms" class="text-sm">
+                            You agree to our <a href="#" class="text-blue-500 hover:underline">Privacy Policy</a> and <a
+                                href="#" class="text-blue-500 hover:underline">Terms of Service</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-red-500 py-3 rounded text-lg font-semibold hover:bg-red-600">Login</button>
+                </form>
+            </div>
+            <!-- Reset Password Section (hidden initially) -->
+            <div id="resetPasswordSection" class="bg-black p-10 rounded-lg shadow-md w-full max-w-md hidden">
+                <h2 class="text-3xl font-bold mb-6 text-center">Reset Your Password</h2>
+
+                <form id="resetPasswordForm">
+                    <input type="email" id="resetEmail" placeholder="Enter Your Email"
+                        class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" id="newPassword" placeholder="New Password"
+                        class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" id="confirmNewPassword" placeholder="Confirm Your New Password"
+                        class="w-full p-3 mb-4 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                    <button type="submit"
+                        class="w-full bg-green-500 py-3 rounded text-lg font-semibold hover:bg-green-600">Reset
+                        Password</button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <a href="#" id="backToLoginLink" class="text-blue-500 hover:underline">Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-black text-white mt-14 ">
+        <div
+            class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
+            <img src="../../imges/Logo.webp" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Company Info</a>
+                    <a>Careers</a>
+                    <a>Press</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Help Center</a>
+                    <a>Contact Us</a>
+                    <a>Refund Policy</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Legal Notices</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
+        <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">Twitter</a>
+        </div>
+        <div class="text-center mt-6 text-xl">
+            <p>© 2024 BitCart. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="login.js"></script>
 </body>
+
 </html>
