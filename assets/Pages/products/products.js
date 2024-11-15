@@ -10,7 +10,7 @@ function displayItems() {
     t=0
     gamesArray.forEach(game => {
         productsList.innerHTML += `
-            <a class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
+            <a onclick="detailGen(${t}),event.preventDefault()" id=${t} class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
                 <div class="text-xl">
                     <img src="${game.images[0]}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>

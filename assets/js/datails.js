@@ -15,7 +15,7 @@ document.getElementById("gamedetail").innerHTML += `
               () =>
                 `<img src="${
                   Object.values(games)[someParam].images[0]
-                }" alt="game gover" class="w-80 h-auto rounded-lg" />`
+                }" alt="game class="w-80 h-auto rounded-lg"/>`
             )
             .join("")}
         </div>
