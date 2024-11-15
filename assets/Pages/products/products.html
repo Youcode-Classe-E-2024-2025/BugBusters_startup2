@@ -163,6 +163,8 @@
         #searchResultsList::-webkit-scrollbar-track {
             background-color: rgba(0, 0, 0, 0.3);
         }
+
+        
     </style>
 </head>
 
@@ -196,7 +198,7 @@
                         <img id="imag1-nav" src="../../imges/search.png" class="h-14" alt="Search icon">
                     </button>
                 </div>
-                <img id="imag2-nav" src="../../imges/carte.png" class="h-14" alt="Cart icon">
+                <button onclick="cartpopup()" ><img id="imag2-nav" src="../../imges/carte.png" class="h-14" alt="Cart icon"></button>
                 <div id="searchResultsPopup"
                     class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden"
                     onclick="closePopup(event)">
@@ -207,7 +209,14 @@
                         <ul id="searchResultsList" class="space-y-4 text-white"></ul>
                     </div>
                 </div>
-
+                <div id="cartPopup" class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden" onclick="closeCartPopup(event)">
+                    <div id="cartPopupContent" class="bg-black p-6 rounded-xl w-1/2 max-w-lg" onclick="event.stopPropagation()">
+                        <h2 class="text-3xl font-bold text-center mb-4 text-white">Your Cart</h2>
+                        <ul id="cartItemsList" class="space-y-4">
+                            <!-- Cart items will be dynamically added here -->
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class=" w-[100%] my-4 grid justify-items-center">

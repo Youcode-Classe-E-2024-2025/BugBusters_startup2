@@ -155,3 +155,22 @@ function closePopup(event = null) {
         document.getElementById("searchResultsPopup").classList.add("hidden");
     }
 }
+
+
+function cartpopup() {
+    document.getElementById("cartPopup").classList.remove("hidden");
+}
+
+function closeCartPopup(event) {
+    if (event.target === document.getElementById("cartPopup") || event.target.closest('button') === null) {
+        document.getElementById("cartPopup").classList.add("hidden");
+    }
+}
+
+// Example function to add items to cart (You can customize it based on your logic)
+function addToCart(item) {
+    const cartItemsList = document.getElementById("cartItemsList");
+    const newItem = document.createElement("li");
+    newItem.textContent = item.name + " - $" + item.price;
+    cartItemsList.appendChild(newItem);
+}
