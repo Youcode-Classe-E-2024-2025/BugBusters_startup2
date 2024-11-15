@@ -132,7 +132,7 @@ function showPopup(filteredGames) {
         resultItem.classList.add('flex', 'items-center', 'space-x-4');
 
         resultItem.innerHTML = `
-            <img src="${game.images}" class="h-20 w-18 object-cover rounded-md" alt="${game.title}">
+            <img src="${game.images[0]}" class="h-20 w-18 object-cover rounded-md" alt="${game.title}">
             <div>
                 <p class="text-lg text-white font-semibold">${game.title}</p>
                 <p class="text-sm text-gray-300">${game.shortDescription}</p>
