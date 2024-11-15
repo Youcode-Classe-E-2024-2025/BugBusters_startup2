@@ -100,3 +100,58 @@ function toggleSortOptions() {
 sortSelect.addEventListener('change', toggleSortOptions);
 toggleSortOptions();
 
+
+function searchItems() {
+    const searchTerm = document.getElementById("Search").value.trim().toLowerCase();
+
+    if (searchTerm !== "") {
+        filterItems(searchTerm);
+    } else {
+        closePopup();
+    }
+}
+
+function filterItems(searchTerm) {
+    const filteredGames = Object.values(games).filter(game => {
+        return game.title.toLowerCase().includes(searchTerm) || game.shortDescription.toLowerCase().includes(searchTerm);
+    });
+
+    if (filteredGames.length > 0) {
+        showPopup(filteredGames);
+    } else {
+        closePopup();
+    }
+}
+
+function showPopup(filteredGames) {
+    const resultsList = document.getElementById("searchResultsList");
+    resultsList.innerHTML = '';
+
+    filteredGames.forEach(game => {
+        const resultItem = document.createElement('li');
+        resultItem.classList.add('flex', 'items-center', 'space-x-4');
+
+        resultItem.innerHTML = `
+            <img src="${game.images}" class="h-20 w-18 object-cover rounded-md" alt="${game.title}">
+            <div>
+                <p class="text-lg text-white font-semibold">${game.title}</p>
+                <p class="text-sm text-gray-300">${game.shortDescription}</p>
+                <p class="text-sm text-red-600">${((1 - (game.discount / 100)) * game.price).toFixed(2)} $US</p>
+            </div>
+        `;
+        resultsList.appendChild(resultItem);
+    });
+
+    document.getElementById("searchResultsPopup").classList.add("bg-black", "bg-opacity-90");
+    document.getElementById("popupContent").classList.add("bg-gray-800", "text-white");
+
+    document.getElementById("searchResultsPopup").classList.remove("hidden");
+}
+
+function closePopup(event = null) {
+    if (event && event.target.id === "searchResultsPopup") {
+        document.getElementById("searchResultsPopup").classList.add("hidden");
+    } else {
+        document.getElementById("searchResultsPopup").classList.add("hidden");
+    }
+}

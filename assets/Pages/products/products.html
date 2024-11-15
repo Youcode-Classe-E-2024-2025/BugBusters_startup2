@@ -1,137 +1,183 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>products</title>
+    <title>BitCrat</title>
     <link rel="stylesheet" href="../../css/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/imges/favicon/favicon-32x32.png" type="image/x-icon">
 
     <style>
-        footer{
+        footer {
             z-index: 1;
             position: relative;
         }
-        .sidebar{
+
+        .sidebar {
             z-index: 0;
         }
+
         @media (max-width: 1065px) {
-            #sold{
+            #sold {
                 width: 50px;
             }
-            #prod{
+
+            #prod {
                 width: 200px;
                 font-size: 15px;
             }
-            #productsPageList{
+
+            #productsPageList {
                 display: grid;
                 justify-content: center;
                 align-items: center;
                 grid-template-columns: 1fr 1fr;
             }
-            #imag{
+
+            #imag {
                 width: 80%;
             }
-            #sort-filter{
+
+            #sort-filter {
                 display: flex;
                 justify-content: center;
             }
-            #sortPrex{
+
+            #sortPrex {
                 width: 150px;
                 height: 50px;
             }
-            #categoryFilter{
+
+            #categoryFilter {
                 width: 150px;
                 height: 50px;
             }
         }
+
         /* téléphone */
-        @media (max-width: 642px){
-            #navbar{
+        @media (max-width: 642px) {
+            #navbar {
                 font-size: 10px;
             }
-            .mb-4{
+
+            .mb-4 {
                 font-size: 20px;
             }
-            #sold{
+
+            #sold {
                 width: 40px;
             }
-            #prod{
+
+            #prod {
                 width: 200px;
                 font-size: 15px;
             }
-            #productsPageList{
+
+            #productsPageList {
                 display: grid;
                 justify-content: center;
                 align-items: center;
                 grid-template-columns: 1fr;
             }
-            #imag{
+
+            #imag {
                 width: 90%;
             }
-            #sort-filter{
+
+            #sort-filter {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-            #sortPrex{
+
+            #sortPrex {
                 /* w-72 h-12; */
                 width: 110px;
                 height: 40px;
                 font-size: 20px;
             }
-            #categoryFilter{
+
+            #categoryFilter {
                 width: 110px;
                 height: 40px;
                 font-size: 20px;
             }
-            #s-i{
+
+            #s-i {
                 width: 70%;
             }
-            #Search{
+
+            #Search {
                 height: 40px;
                 width: 150px;
             }
-            #imag1-nav{
+
+            #imag1-nav {
                 height: 40px;
                 width: 40px;
                 margin-left: 80px;
             }
-            
+
         }
-        @media (max-width: 594px){
-            #s-i{
+
+        @media (max-width: 594px) {
+            #s-i {
                 width: 70%;
             }
-            #Search{
+
+            #Search {
                 height: 35px;
                 width: 130px;
             }
-            #imag1-nav{
+
+            #imag1-nav {
                 height: 35px;
                 width: 35px;
                 margin-left: 100px;
             }
-            #imag2-nav{
+
+            #imag2-nav {
                 height: 35px;
                 width: 35px;
                 margin-left: 80px;
             }
         }
+
+        /* Custom scrollbar style */
+        #searchResultsList {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.3);
+            /* Scrollbar color */
+        }
+
+        #searchResultsList::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #searchResultsList::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        #searchResultsList::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
+
 <body class="bg-primary bg-opacity-90 font-jura">
     <section class="flex flex-row">
-       <!-- Sidebar -->
-       <div id="navbar" class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0 sidebar">
+        <!-- Sidebar -->
+        <div id="navbar"
+            class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0 sidebar">
             <div class="-mt-6">
                 <img src="../../imges/Logo.webp" alt="Logo BitCart">
-                    <ul class="text-center text-[25px]">
-                        <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
-                        <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
-                        <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                    </ul>
+                <ul class="text-center text-[25px]">
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                </ul>
             </div>
             <div>
                 <button class="w-full bg-gray-600 py-2 text-white rounded mb-4">Contact</button>
@@ -142,23 +188,42 @@
 
         <!-- Main content -->
         <main class="flex flex-col m-[10px] justify-items-center w-[100vw] ml-[25%]">
-            <div id="s-i" class="grid grid-cols-12">
-                <input id="Search" type="text" placeholder="Search" class="bg-gray-500 bg-opacity-35 w-full col-span-4 p-2 rounded-xl  h-14 text-gray-300 focus:outline-none m-[55px] mt-4" id="searchInput" />
-                <img id="imag1-nav" src="../../imges/search.png" class="h-14 z-10 mt-4 ml-3" alt="Search icon">
-                <img id="imag2-nav" src="../../imges/carte.png" class="h-14 col-start-12 mt-4" alt="Cart icon">
+            <div id="s-i" class="flex flex-row items-center justify-between m-2">
+                <div class="flex flex-row items-center ml-6">
+                    <input id="Search" type="text" placeholder="Search"
+                        class="bg-gray-500 bg-opacity-35 bg-none w-full p-2 rounded-xl h-14 text-gray-300 focus:outline-none" />
+                    <button onclick="searchItems()" class="ml-2 flex justify-center items-center">
+                        <img id="imag1-nav" src="../../imges/search.png" class="h-14" alt="Search icon">
+                    </button>
+                </div>
+                <img id="imag2-nav" src="../../imges/carte.png" class="h-14" alt="Cart icon">
+                <div id="searchResultsPopup"
+                    class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden"
+                    onclick="closePopup(event)">
+                    <div id="popupContent" class="bg-black p-6 rounded-xl w-1/2 max-w-lg max-h-[80vh] overflow-y-auto"
+                        onclick="event.stopPropagation()">
+                        <button onclick="closePopup()" class="absolute top-10 right-10 text-red-600 text-7xl">X</button>
+                        <h2 class="text-3xl text-center mb-4 text-white">Search Results</h2>
+                        <ul id="searchResultsList" class="space-y-4 text-white"></ul>
+                    </div>
+                </div>
+
             </div>
+
             <div class=" w-[100%] my-4 grid justify-items-center">
                 <img id="imag" class="w-[95%] h-full object-cover rounded-3xl" src="./../../imges/FC25.png" alt="">
             </div>
             <div id="sort-filter" class="flex justify-end space-x-4 p-4 mr-7 mt-8 mb-4">
-                <select id="sortPrex" name="filter" class="bg-[#676767] text-white border border-white px-2 w-72 h-12 rounded-xl mr-2 text-center text-4xl">
+                <select id="sortPrex" name="filter"
+                    class="bg-[#676767] text-white border border-white px-2 w-72 h-12 rounded-xl mr-2 text-center text-4xl">
                     <option value="sorte">Sorte</option>
                     <option value="title">S.Alphabet</option>
                     <option value="price">S.Prex</option>
                 </select>
-                
+
                 <!-- <button id="sortprex" class="bg-red-700">S.Prex</button> -->
-                <select id="categoryFilter" name="filter" class="bg-[#676767] text-white border border-white px-2 w-72 h-12 rounded-xl mr-2 text-center text-4xl">
+                <select id="categoryFilter" name="filter"
+                    class="bg-[#676767] text-white border border-white px-2 w-72 h-12 rounded-xl mr-2 text-center text-4xl">
                     <option value="all">Filter</option>
                     <option value="action">Action</option>
                     <option value="shooter">Shooter</option>
@@ -178,11 +243,12 @@
                     <option value="battle-royale">Battle-Royale</option>
                 </select>
             </div>
-            <section id="productsPageList" class="grid justify-items-center align-middle w-full grid-cols-3 gap-8"></section>
+            <section id="productsPageList" class="grid justify-items-center align-middle w-full grid-cols-3 gap-8">
+            </section>
         </main>
         <!-- End of main content -->
 
-        
+
 
     </section>
 
@@ -225,11 +291,11 @@
             <p>© 2024 BitCart. All Rights Reserved.</p>
         </div>
     </footer>
- 
+
 
 
     <script src="./products.js"></script>
     <script src="./../../js/script.js"></script>
 </body>
-</html>
 
+</html>
