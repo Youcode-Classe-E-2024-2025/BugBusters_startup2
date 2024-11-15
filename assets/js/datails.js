@@ -6,7 +6,7 @@ games = JSON.parse(text);
 console.log(Object.values(games)[someParam].title);
 
 document.getElementById("gamedetail").innerHTML += `
-    <div class="flex">
+    <div class="flex flex-row gap-11 mr-16">
       <!-- game image carousel -->
       <div id="carousel" class="relative w-80 overflow-hidden">
         <div id="carousel-inner" class="flex transition-transform duration-500">
@@ -32,11 +32,11 @@ document.getElementById("gamedetail").innerHTML += `
       <!-- Game Details -->
       <div>
         <h1 class="text-4xl mb-4">${Object.values(games)[someParam].title}</h1>
-        <div class="space-y-2 text-2xl w-72">
-          <p>Edition: ${Object.values(games)[someParam].Edition}</p>
-          <p>Platform: ${Object.values(games)[someParam].platform}</p>
-          <p>Bonuses: ${Object.values(games)[someParam].bonuses}</p>
-          <p>Release Date: ${Object.values(games)[someParam].releaseDate}</p>
+        <div class="space-y-2 text-2xl w-96">
+          <p>Edition: Ultimate</p>
+          <p>Platform: PC</p>
+          <p>Bonuses: Story mode boosts, ingame items, bonus cash</p>
+          <p>Release Date: Available Now </p>
         </div>
 
         <!-- price section -->
