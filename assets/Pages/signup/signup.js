@@ -14,7 +14,6 @@ signupForm.addEventListener('submit', function(event) {
         alert("Veuillez remplir tous les champs.");
         return;
     }
-
     
     if (password !== confirmPassword) {
         alert("Les mots de passe ne correspondent pas.");
