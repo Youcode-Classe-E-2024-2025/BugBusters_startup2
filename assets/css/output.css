@@ -1800,6 +1800,10 @@ video {
     margin-top: 0.75rem;
   }
 
+  .max-sm\:h-1\.5 {
+    height: 0.375rem;
+  }
+
   .max-sm\:items-center {
     align-items: center;
   }
