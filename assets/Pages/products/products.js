@@ -11,13 +11,13 @@ function displayItems() {
     gamesArray.forEach(game => {
         productsList.innerHTML += `
             <a onclick="detailGen(${t}),event.preventDefault()" id=${t} class="product justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
-                <div class="text-xl">
+                <div id="prod" class="text-xl">
                     <img src="${game.images}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>
                     <p class="text-white">${game.title}</p>
                     <div class="flex justify-between">
-                        <p class="bg-[#ff0000] w-20 text-center rounded-md text-white">-${game.discount}%</p>
-                        <p class="text-gray-600 text-xs content-center">${game.price} $US</p>
+                        <p id="sold" class="bg-[#ff0000] w-20 text-center rounded-md text-white">-${game.discount}%</p>
+                        <p class="text-gray-600 text-xs content-center line-through">${game.price} $US</p>
                         <p class="text-white">${((1 - (game.discount / 100)) * game.price).toFixed(2)} $US</p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ function sortItemsByPrice() {
     const gamesArray = Object.values(games);
 
    
-    gamesArray.sort((a, b) => a.price - b.price);
+    gamesArray.sort((a, b) => ((1 - (a.discount / 100)) * a.price).toFixed(2) - ((1 - (b.discount / 100)) * b.price).toFixed(2));
 
  
     games = gamesArray.reduce((obj, game, index) => {
