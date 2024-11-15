@@ -12,12 +12,23 @@ loginForm.addEventListener('submit', function(event) {
     const email = emailInput.value;
     const password = passwordInput.value;
     if (email && password) {
-        const storedEmail = localStorage.getItem('userEmail');
-        const storedPassword = localStorage.getItem('userPassword');
+        // Récupérer le tableau d'utilisateurs depuis localStorage
+        const users = JSON.parse(localStorage.getItem('users')) || [];
 
-        if (email === storedEmail && password === storedPassword) {
-            alert("Connexion réussie !");
-        
+        // Vérifier si l'email et le mot de passe correspondent à un utilisateur dans le tableau
+        const user = users.find(user => user.email === email && user.password === password);
+
+        if (user) {
+            // Si l'utilisateur est trouvé, connecter l'utilisateur et stocker ses informations globalement
+            
+
+            // Sauvegarder l'utilisateur connecté dans localStorage pour qu'il soit accessible partout
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            document.getElementById("sub_but").href = "../products/products.html";
+
+            document.getElementById("sub_but").click();
+            // Vous pouvez rediriger l'utilisateur vers une autre page après connexion
+
         } else {
             alert("Email ou mot de passe incorrect.");
         }
@@ -53,32 +64,26 @@ resetPasswordForm.addEventListener('submit', function(event) {
         alert("Les mots de passe ne correspondent pas.");
         return;
     }
-    const storedEmail = localStorage.getItem('userEmail');
-    if (storedEmail !== resetEmail) {
+
+    // Récupérer le tableau d'utilisateurs depuis localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Trouver l'utilisateur correspondant à l'email
+    const userIndex = users.findIndex(user => user.email === resetEmail);
+
+    if (userIndex === -1) {
         alert("Cet email n'est pas enregistré.");
         return;
     }
 
-    localStorage.setItem('userPassword', newPassword);
+    // Mettre à jour le mot de passe de l'utilisateur
+    users[userIndex].password = newPassword;
+    
+    // Sauvegarder les utilisateurs avec le mot de passe mis à jour dans localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+
     alert("Votre mot de passe a été réinitialisé avec succès.");
 
     resetPasswordSection.classList.add('hidden');
     loginFormSection.classList.remove('hidden');
-});
-
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
-    const email = emailInput.value;
-    const password = passwordInput.value;
-
-
-    if (email && password) {
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userPassword', password);
-
-        console.log('Email et mot de passe enregistrés :', email, password);
-    } else {
-        alert('Veuillez remplir tous les champs');
-    }
 });
