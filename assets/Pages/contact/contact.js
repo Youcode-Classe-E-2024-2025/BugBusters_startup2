@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const emailInput = form.querySelector('input[type="email"]');
