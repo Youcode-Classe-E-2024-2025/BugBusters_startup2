@@ -15,6 +15,12 @@ document.getElementById("gamedetail").innerHTML += `
               () =>
                 `<img src="${
                   Object.values(games)[someParam].images[0]
+                }" alt="game gover" class="w-80 h-auto rounded-lg" />
+                <img src="${
+                  Object.values(games)[someParam].images[1]
+                }" alt="game gover" class="w-80 h-auto rounded-lg" />
+                <img src="${
+                  Object.values(games)[someParam].images[2]
                 }" alt="game gover" class="w-80 h-auto rounded-lg" />`
             )
             .join("")}
@@ -86,6 +92,7 @@ carouselInner.insertBefore(lastClone, images[0]);
 carouselInner.style.transform = `translateX(-320px)`;
 
 function updateCarousel(direction) {
+  
   if (direction === "next") {
     currentIndex++;
   } else {
