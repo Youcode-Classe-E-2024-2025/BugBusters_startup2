@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product management</title>
+    <link rel="stylesheet" href="../../css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../imges/favicon/favicon1-32x32.png" type="image/x-icon">
+</head>
+<body id="pmpBody" class="bg-zinc-800 font-jura">
+    <section id="PM" class="flex">
+        <!-- side bare -->
+        <div class="bg-black min-h-screen">
+            <div class="grid justify-items-start h-48 gap-2">
+                <img class="mb-8" src="../../imges/admin_logo.png" alt="" width="350">
+                <div class="grid grid-rows-5 justify-items-start ml-12">
+                    <a href="admin.html" class="text-white text-center row-start-1">Dashboard</a>
+                    <a href="#" class="text-white text-center row-start-3">Product Management</a>
+                    <a href="contact-messages.html" class="text-white text-center row-start-5"> Contact Messages</a>
+                </div>
+            </div>
+        </div>
+        <!-- end of side bare -->
+        <!-- main content -->
+        <main class="w-[100vw]">
+            <!-- management white card -->
+             <div class="justify-items-end grid pt-12 pr-14 mb-6">
+                <button onclick="blurToggel(event)" class="h-14 w-44 text-2xl bg-zinc-600 text-white rounded-2xl font-medium">Add Game</button>
+             </div>
+            <div id="pmList" class="justify-items-center grid gap-6"></div>
+            <!-- end of management white card -->
+            
+        </main>
+        <!-- end of main content -->
+    </section>
+    <button onclick="blurToggel(event)" id="remblur_btn" class="fixed top-0 w-screen h-screen hidden bg-transparent cursor-default"></button>
+    <section id="add_form" class="fixed top-10 w-screen h-5 hidden">
+        <form id="addForm" class="flex gap-28 bg-white justify-self-center p-10">
+            <div class="grid gap-0 justify-items-center content-center">
+                <h3 class="text-4xl h-auto">Upload Cover</h3>
+                <img src="../../imges/upload.png" alt="" width="200">
+                <!-- <button class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium">Upload</button> -->
+                <!-- <input class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium" type="file" id="myFile" name="filename"> -->
+                <label for="fileUpload" class="h-12 w-48 text-2xl bg-sky-500 text-white font-medium inline-block text-center cursor-pointer content-center">
+                    Upload
+                </label>
+                <input id="fileUpload" type="file" class="hidden" />
+            </div>
+            <div class="grid gap-2 text-l">
+                <input id="addTitle" class="p-3 border-black border" type="text" placeholder="Title">
+                <input id="addcategory" class="p-3 border-black border" type="text" placeholder="Category">
+                <textarea id="addShortInfo" class="p-3 border-black border resize-none" name="" placeholder="short info" rows="2" class="resize-none"></textarea>
+                <textarea id="addLongDescription" class="p-3 border-black border  resize-none" name="" placeholder="long description" rows="4" class="resize-none "></textarea>
+                <div class="flex justify-between">
+                    <input id="addDescount" class="w-32 border-black border text-center" type="text" placeholder="Discount">
+                    <input id="addPrice" class="w-32 p-4 text-center border-black border" type="text" placeholder="price">
+                    <input class="w-32 text-center border-black border" type="text" placeholder="Now Price">
+                </div>
+                <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
+                    <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
+                    <button id="addGameBtn" onclick="gameAdd()" class="h-10 w-32 text-xl bg-black text-white">Add</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <section id="edit_form" class="fixed top-10 w-screen h-5 hidden">
+        <form id="editForm" class="bg-white justify-self-center p-10">
+            <div class="grid gap-2 text-l">
+                <input id="editTitle" class="p-3 border-black border" type="text" placeholder="Title">
+                <input id="editCategory" class="p-3 border-black border" type="text" placeholder="Category">
+                <textarea id="editShortInfo" class="p-3 border-black border resize-none" name="" placeholder="short info" rows="2" class="resize-none"></textarea>
+                <textarea id="editLongDescription" class="p-3 border-black border  resize-none" name="" placeholder="long description" rows="4" class="resize-none "></textarea>
+                <div class="flex justify-between">
+                    <input id="editDescount" class="w-36 border-black border text-center" type="text" placeholder="Descount">
+                    <input id="editPrice" class="w-36 p-4 text-center border-black border" type="text" placeholder="price">
+                    <input id="newprice" class="w-36 text-center border-black border" type="text" placeholder="Now Price">
+                </div>
+                <div class="grid justify-items-end grid-cols-4 mt-12 gap-5">
+                    <button onclick="blurToggel(event)" class="h-10 w-32 text-xl bg-red-500 text-white col-span-3">Cancel</button>
+                    <button id="editGameBtn" onclick="editGame(this.getAttribute('data-id'))" class="h-10 w-32 text-xl bg-black text-white">Edit</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- <footer class="bg-black text-white">
+        <div class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
+            <img src="../../imges/admin_logo.png" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Company Info</a>
+                    <a>Careers</a>
+                    <a>Press</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Help Center</a>
+                    <a>Contact Us</a>
+                    <a>Refund Policy</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Legal Notices</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
+        <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">Twitter</a>
+        </div>
+        <div class="text-center mt-6 text-xl">
+            <p>© 2024 BitCart. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+    <script src="../../js/script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
