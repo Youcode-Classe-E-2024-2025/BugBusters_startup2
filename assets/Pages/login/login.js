@@ -20,13 +20,15 @@ loginForm.addEventListener('submit', function(event) {
 
         if (user) {
             // Si l'utilisateur est trouvé, connecter l'utilisateur et stocker ses informations globalement
-            alert("Connexion réussie !");
+            
 
             // Sauvegarder l'utilisateur connecté dans localStorage pour qu'il soit accessible partout
             localStorage.setItem('currentUser', JSON.stringify(user));
+            document.getElementById("sub_but").href = "../products/products.html";
 
+            document.getElementById("sub_but").click();
             // Vous pouvez rediriger l'utilisateur vers une autre page après connexion
-            // window.location.href = "page_accueil.html";
+
         } else {
             alert("Email ou mot de passe incorrect.");
         }
