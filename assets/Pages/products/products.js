@@ -25,7 +25,7 @@ function displayItems() {
             t++;
     });
 }
-
+//
 function detailGen(ga){
     // console.log(Object.values(games)[ga]);
     const url = `/assets/Pages/product_details/product_details.html?id=${ga}`;  // Create the URL with the ID as a query parameter
