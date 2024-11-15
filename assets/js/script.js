@@ -43,7 +43,7 @@ let games = {
     game4: {
         title: "Red Dead Redemption 2",
         category: "Adventure",
-        images:["../../imges/products/4.webp","../imges/products/RE2.webp","../imges/products/RE3.webp"],
+        images:["../../imges/products/6.webp","../imges/products/RE2.webp","../imges/products/RE3.webp"],
         shortDescription: "Embark on an unforgettable journey through America's untamed frontier.",
         longDescription: "Play as Arthur Morgan, an outlaw seeking redemption and survival in the rugged American heartland. Red Dead Redemption 2 offers a meticulously crafted open world filled with intricate character interactions, immersive environments, and realistic wildlife. As a member of the Van der Linde gang, experience the rise and fall of a group of outlaws battling lawmen, rival gangs, and their own struggles in a changing world. The game’s breathtaking graphics, attention to detail, and emotional depth make it a masterpiece of storytelling and exploration.",
         price: 39.99,
@@ -53,7 +53,7 @@ let games = {
     game5: {
         title: "Assassin's Creed",
         category: "Action-Adventure",
-        images:["../../imges/products/5.webp","../imges/products/AS2.webp","../imges/products/AS3.webp"],
+        images:["../../imges/products/7.webp","../imges/products/AS2.webp","../imges/products/AS3.webp"],
         shortDescription: "Travel back in time and step into the role of a master assassin in epic historical settings.",
         longDescription: "Assassin’s Creed allows you to relive historical events through the eyes of a skilled assassin. Each entry takes you to a different period and place, from ancient Egypt to revolutionary Paris, where you’ll meet historical figures and uncover hidden secrets. Use stealth, strategy, and agility to dismantle powerful enemies and reshape history. The franchise combines rich storytelling, breathtaking locations, and advanced gameplay mechanics, making it a captivating journey through the past.",
         price: 45.00,
@@ -63,7 +63,7 @@ let games = {
     game6: {
         title: "Rise of the Tomb Raider",
         category: "Action-Adventure",
-        images:["../../imges/products/6.webp","../imges/products/RI2.webp","../imges/products/RI3.webp"],
+        images:["../../imges/products/8.webp","../imges/products/RI2.webp","../imges/products/RI3.webp"],
         shortDescription: "Embark on a thrilling adventure with Lara Croft as she uncovers ancient mysteries.",
         longDescription: "Join Lara Croft in her quest to uncover the secrets of a lost city in Siberia. In Rise of the Tomb Raider, Lara must use her survival instincts, weaponry, and archaeological skills to face deadly challenges, treacherous weather, and powerful enemies. This game offers an emotional journey, breathtaking landscapes, and puzzles that challenge players’ minds. With stunning visuals and an immersive storyline, this is one of the finest Tomb Raider adventures yet.",
         price: 35.00,
@@ -73,7 +73,7 @@ let games = {
     game7: {
         title: "Fortnite",
         category: "Battle Royale",
-        images:["../../imges/products/7.webp","../imges/products/FO2.webp","../imges/products/FO3.webp"],
+        images:["../../imges/products/9.webp","../imges/products/FO2.webp","../imges/products/FO3.webp"],
         shortDescription: "Jump into a vibrant battle royale experience full of adventure and challenges.",
         longDescription: "Fortnite is a fast-paced, multiplayer game that combines battle royale excitement with unique building mechanics. Drop into an ever-changing world, explore diverse locations, and engage in dynamic combat with other players to become the last one standing. Customize your character, team up with friends, and experience seasonal events that bring fresh content and storylines. Known for its colorful graphics, crossovers with pop culture, and creative possibilities, Fortnite has redefined online multiplayer gaming.",
         price: 0.00,
@@ -83,7 +83,7 @@ let games = {
     game8: {
         title: "Dragon Age: The Velguard",
         category: "RPG",
-        images:["../../imges/products/8.webp","../imges/products/DR2.webp","../imges/products/DR3.webp"],
+        images:["../../imges/products/4.webp","../imges/products/DR2.webp","../imges/products/DR3.webp"],
         shortDescription: "Enter a world of magic and myth, where your choices shape the fate of nations.",
         longDescription: "Dragon Age: The Velguard transports players to Thedas, a world filled with magic, political intrigue, and looming threats. Craft your hero's path, ally with powerful warriors, and decide the future of kingdoms as you navigate complex relationships and confront dark forces. With deep lore, expansive exploration, and strategic combat, The Velguard offers an unforgettable RPG experience where your decisions matter.",
         price: 49.99,
@@ -93,7 +93,7 @@ let games = {
     game9: {
         title: "Rabbids Volcano Panic",
         category: "Party",
-        images:["../../imges/products/9.webp","../imges/products/RA2.webp","../imges/products/RA3.webp"],
+        images:["../../imges/products/5.webp","../imges/products/RA2.webp","../imges/products/RA3.webp"],
         shortDescription: "Join the chaotic Rabbids in a frantic race for survival on a volcanic island.",
         longDescription: "Rabbids Volcano Panic invites players to escape an erupting island with hilarious challenges and unpredictable obstacles. Join the mischievous Rabbids as they race to survive, dodge lava flows, and cause chaos. This action-packed, family-friendly game offers a fun mix of strategy, humor, and fast-paced gameplay, providing a unique take on the Rabbids’ antics in a tropical volcanic setting.",
         price: 19.99,
@@ -113,7 +113,7 @@ let games = {
     game11: {
         title: "Fall Guys",
         category: "Party",
-        images:["../../imges/products/11.webp","../imges/products/FA2.webp","../imges/products/FA3.webp"],
+        images:["../../imges/products/12.webp","../imges/products/FA2.webp","../imges/products/FA3.webp"],
         shortDescription: "Join the wacky battle royale where everyone’s racing to the finish!",
         longDescription: "Fall Guys is a chaotic and colorful party game where players compete in a series of wacky, obstacle-filled courses. With quirky costumes and physics-based challenges, each round is a hilarious race to survive. Battle with friends or players worldwide as you bounce, dive, and tumble through unpredictable mini-games, all in an attempt to claim the crown!",
         price: 19.99,
@@ -123,7 +123,7 @@ let games = {
     game12: {
         title: "Enshrouded",
         category: "Survival",
-        images:["../../imges/products/12.webp","../imges/products/EN2.webp","../imges/products/EN3.webp"],
+        images:["../../imges/products/11.webp","../imges/products/EN2.webp","../imges/products/EN3.webp"],
         shortDescription: "Survive in a mysterious world shrouded in fog and danger.",
         longDescription: "Enshrouded is a survival game that thrusts players into a desolate, fog-covered landscape filled with unknown threats. Gather resources, craft equipment, and explore eerie, abandoned locations as you uncover the secrets of the fog. With immersive atmospheres and challenging survival mechanics, Enshrouded provides a unique experience for those who seek mystery and suspense.",
         price: 34.99,
