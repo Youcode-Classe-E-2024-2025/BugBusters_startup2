@@ -3,6 +3,7 @@ let text = localStorage.getItem("productData");
 games = JSON.parse(text);
 
 function displayItems() {
+    console.log("Displaying games:", games);
     const productsList = document.getElementById("productsPageList");
     productsList.innerHTML = ''; 
 
@@ -11,7 +12,7 @@ function displayItems() {
     gamesArray.forEach(game => {
         productsList.innerHTML += `
             <a class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
-                <div class="text-xl">
+                <div id="product" class="text-xl">
                     <img src="${game.images[0]}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>
                     <p class="text-white">${game.title}</p>
@@ -34,13 +35,14 @@ function detailGen(ga){
 
 
 function sortItemsByPrice() {
-   
     const gamesArray = Object.values(games);
 
-   
-    gamesArray.sort((a, b) => ((1 - (a.discount / 100)) * a.price).toFixed(2) - ((1 - (b.discount / 100)) * b.price).toFixed(2));
+    gamesArray.sort((a, b) => {
+        const priceA = ((1 - (a.discount / 100)) * a.price).toFixed(2);
+        const priceB = ((1 - (b.discount / 100)) * b.price).toFixed(2);
+        return parseFloat(priceA) - parseFloat(priceB);
+    });
 
- 
     games = gamesArray.reduce((obj, game, index) => {
         obj[`game${index + 1}`] = game;
         return obj;
@@ -49,7 +51,7 @@ function sortItemsByPrice() {
     displayItems();
 }
 
-
+// Update for sort items by title
 function sortItemsByTitle() {
     const gamesArray = Object.values(games);
     gamesArray.sort((a, b) => a.title.localeCompare(b.title));
@@ -67,15 +69,6 @@ document.getElementById('sortPrex').addEventListener('change', function() {
         sortItemsByPrice();
     } 
     else if (selectedOption === 'title') {
-        sortItemsByTitle();
-    }
-});
-
-document.getElementById('sortPrex').addEventListener('change', function() {
-    const selectedOption = this.value;
-    if (selectedOption === 'price') {
-        sortItemsByPrice();
-    } else if (selectedOption === 'title') {
         sortItemsByTitle();
     }
 });
@@ -174,3 +167,19 @@ function addToCart(item) {
     newItem.textContent = item.name + " - $" + item.price;
     cartItemsList.appendChild(newItem);
 }
+
+
+function filtrerJeux() {
+    const category = document.getElementById("categoryFilter").value;
+    const filteredGames = category === "all" 
+        ? games 
+        : Object.fromEntries(
+            Object.entries(games).filter(([_, game]) => game.category === category)
+        );
+        games = filteredGames;
+        displayItems();
+}
+
+document.getElementById("categoryFilter").addEventListener("change", filtrerJeux);
+
+displayItems();

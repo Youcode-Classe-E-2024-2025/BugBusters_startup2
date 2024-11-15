@@ -20,15 +20,7 @@
         }
 
         @media (max-width: 1065px) {
-            #sold {
-                width: 50px;
-            }
-
-            #prod {
-                width: 200px;
-                font-size: 15px;
-            }
-
+            
             #productsPageList {
                 display: grid;
                 justify-content: center;
@@ -57,7 +49,7 @@
         }
 
         /* téléphone */
-        @media (max-width: 642px) {
+        @media (max-width: 684px) {
             #navbar {
                 font-size: 10px;
             }
@@ -69,9 +61,8 @@
             #sold {
                 width: 40px;
             }
-
-            #prod {
-                width: 200px;
+            #product{
+                width: 180px;
                 font-size: 15px;
             }
 
@@ -79,7 +70,7 @@
                 display: grid;
                 justify-content: center;
                 align-items: center;
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             #imag {
@@ -104,45 +95,21 @@
                 height: 40px;
                 font-size: 20px;
             }
-
-            #s-i {
-                width: 70%;
-            }
-
-            #Search {
-                height: 40px;
-                width: 150px;
-            }
-
-            #imag1-nav {
-                height: 40px;
-                width: 40px;
-                margin-left: 80px;
-            }
-
         }
 
-        @media (max-width: 594px) {
-            #s-i {
-                width: 70%;
+        @media (max-width: 570px) {
+           
+            #product{
+                width: 170px;
+                font-size: 14px;
             }
 
-            #Search {
-                height: 35px;
-                width: 130px;
-            }
-
-            #imag1-nav {
-                height: 35px;
-                width: 35px;
-                margin-left: 100px;
-            }
-
-            #imag2-nav {
-                height: 35px;
-                width: 35px;
-                margin-left: 80px;
-            }
+            #productsPageList {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 1fr;
+            }   
         }
 
         /* Custom scrollbar style */
@@ -194,7 +161,7 @@
                 <div class="flex flex-row items-center ml-6">
                     <input id="Search" type="text" placeholder="Search"
                         class="bg-gray-500 bg-opacity-35 bg-none w-full p-2 rounded-xl h-14 text-gray-300 focus:outline-none" />
-                    <button onclick="searchItems()" class="ml-2 flex justify-center items-center">
+                    <button onclick="searchItems()" class="flex justify-center items-center -ml-10">
                         <img id="imag1-nav" src="../../imges/search.png" class="h-14" alt="Search icon">
                     </button>
                 </div>
@@ -209,6 +176,7 @@
                         <ul id="searchResultsList" class="space-y-4 text-white"></ul>
                     </div>
                 </div>
+                <!-- your carte -->
                 <div id="cartPopup" class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden" onclick="closeCartPopup(event)">
                     <div id="cartPopupContent" class="bg-black p-6 rounded-xl w-1/2 max-w-lg" onclick="event.stopPropagation()">
                         <h2 class="text-3xl font-bold text-center mb-4 text-white">Your Cart</h2>
