@@ -20,7 +20,7 @@
         }
 
         @media (max-width: 1065px) {
-            
+
             #productsPageList {
                 display: grid;
                 justify-content: center;
@@ -61,7 +61,8 @@
             #sold {
                 width: 40px;
             }
-            #product{
+
+            #product {
                 width: 180px;
                 font-size: 15px;
             }
@@ -98,8 +99,8 @@
         }
 
         @media (max-width: 570px) {
-           
-            #product{
+
+            #product {
                 width: 170px;
                 font-size: 14px;
             }
@@ -109,7 +110,7 @@
                 justify-content: center;
                 align-items: center;
                 grid-template-columns: 1fr;
-            }   
+            }
         }
 
         /* Custom scrollbar style */
@@ -130,8 +131,6 @@
         #searchResultsList::-webkit-scrollbar-track {
             background-color: rgba(0, 0, 0, 0.3);
         }
-
-        
     </style>
 </head>
 
@@ -165,7 +164,8 @@
                         <img id="imag1-nav" src="../../imges/search.png" class="h-14" alt="Search icon">
                     </button>
                 </div>
-                <button onclick="cartpopup()" ><img id="imag2-nav" src="../../imges/carte.png" class="h-14" alt="Cart icon"></button>
+                <button onclick="cartpopup()"><img id="imag2-nav" src="../../imges/carte.png" class="h-14"
+                        alt="Cart icon"></button>
                 <div id="searchResultsPopup"
                     class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden"
                     onclick="closePopup(event)">
@@ -177,12 +177,28 @@
                     </div>
                 </div>
                 <!-- your carte -->
-                <div id="cartPopup" class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden" onclick="closeCartPopup(event)">
-                    <div id="cartPopupContent" class="bg-black p-6 rounded-xl w-1/2 max-w-lg" onclick="event.stopPropagation()">
+                <div id="cartPopup"
+                    class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden "
+                    onclick="closeCartPopup(event)">
+                    <div id="cartPopupContent" class="bg-black p-6 rounded-xl w-[780px]"
+                        onclick="event.stopPropagation()">
                         <h2 class="text-3xl font-bold text-center mb-4 text-white">Your Cart</h2>
-                        <ul id="cartItemsList" class="space-y-4">
+                        <div id="cartItemsList" class="flex flex-row text-white">
                             <!-- Cart items will be dynamically added here -->
-                        </ul>
+                            <div class="w-1/2 items-end justify-end">
+                                <img class="w-72" src="./../../imges/products/13.webp" alt="">
+                            </div>
+                            <div class="w-1/2">
+                                <h1 class="text-3xl mb-10">Red Dead Redemption 2</h1>
+                                <div class="flex flex-col text-start">
+                                    <p class="text-lg  ">Edition: Ultimate </p>
+                                    <p class="text-lg">Platform: PC </p>
+                                    <p class="text-lg">Price: 34,99 $US </p>
+                                    <p class="text-lg">Bonuses: Story mode boosts, ingame items, bonus cash Release
+                                        Date: Available Now</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
