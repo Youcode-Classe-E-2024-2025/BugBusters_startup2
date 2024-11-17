@@ -5,6 +5,16 @@ const loginFormSection = document.getElementById('loginFormSection');
 const resetPasswordSection = document.getElementById('resetPasswordSection');
 const forgotPasswordLink = document.getElementById('forgotPasswordLink');
 const backToLoginLink = document.getElementById('backToLoginLink');
+
+let users = JSON.parse(localStorage.getItem('users')) || [];
+let admin = {
+    email: "admin@admin.com",
+    password: "admin"
+};
+if(users[0]?.email!==admin.email){
+    users.push(admin);
+    localStorage.setItem('users', JSON.stringify(users));
+};
 const resetPasswordForm = document.getElementById('resetPasswordForm');
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
