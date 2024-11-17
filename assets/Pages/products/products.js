@@ -11,8 +11,8 @@ function displayItems() {
     t=0
     gamesArray.forEach(game => {
         productsList.innerHTML += `
-            <a class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
-                <div id="t" class="text-xl">
+            <a onclick="detailGen(${t}),event.preventDefault()" class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
+                <div class="text-xl">
                     <img src="${game.images[0]}" width="250px" class="aspect-[280/373] border border-gray-500" alt="${game.shortDescription}">
                     <p class="text-gray-600"> Édition </p>
                     <p class="text-white">${game.title}</p>
@@ -28,9 +28,13 @@ function displayItems() {
 }
 
 function detailGen(ga){
-    // console.log(Object.values(games)[ga]);
-    const url = `/assets/Pages/product_details/product_details.html?id=${ga}`;  // Create the URL with the ID as a query parameter
-    window.location.href = url;  // Redirect to the new page with the ID in the URL
+    if(window.location.href === `https://youcode-classe-e-2024-2025.github.io/BugBusters_startup2/assets/Pages/products/products.html`){
+        const url = `/BugBusters_startup2/assets/Pages/product_details/product_details.html?id=${ga}`;
+        window.location.href = url;
+    }else{
+        const url = `/assets/Pages/product_details/product_details.html?id=${ga}`;
+        window.location.href = url;
+    }
 }
 
 
