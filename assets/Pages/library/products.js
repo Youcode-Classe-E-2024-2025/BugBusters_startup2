@@ -1,13 +1,13 @@
 
-let text = localStorage.getItem("productData");
-games = JSON.parse(text);
+let text = localStorage.getItem("gamlib");
+let gamelib = JSON.parse(text);
 
 
 function displayItems() {
     const productsList = document.getElementById("productsPageList");
     productsList.innerHTML = ''; 
 
-    const gamesArray = Object.values(games);
+    const gamesArray = gamelib;
     t=0
     gamesArray.forEach(game => {
         let pri=game.price+" $US"
