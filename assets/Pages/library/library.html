@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitCrat</title>
+    <link rel="stylesheet" href="../../css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/imges/favicon/favicon-32x32.png" type="image/x-icon">
+
+    <style>
+        footer {
+            z-index: 1;
+            position: relative;
+        }
+
+        .sidebar {
+            z-index: 0;
+        }
+
+        @media (max-width: 1065px) {
+
+            #productsPageList {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #imag {
+                width: 80%;
+            }
+
+            #sort-filter {
+                display: flex;
+                justify-content: center;
+            }
+
+            #sortPrex {
+                width: 150px;
+                height: 50px;
+            }
+
+            #categoryFilter {
+                width: 150px;
+                height: 50px;
+            }
+        }
+
+        /* téléphone */
+        @media (max-width: 684px) {
+            #navbar {
+                font-size: 10px;
+            }
+
+            .mb-4 {
+                font-size: 20px;
+            }
+
+            #sold {
+                width: 40px;
+            }
+
+            #product {
+                width: 180px;
+                font-size: 15px;
+            }
+
+            #productsPageList {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #imag {
+                width: 90%;
+            }
+
+            #sort-filter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #sortPrex {
+                /* w-72 h-12; */
+                width: 110px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            #categoryFilter {
+                width: 110px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 570px) {
+
+            #product {
+                width: 170px;
+                font-size: 14px;
+            }
+
+            #productsPageList {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Custom scrollbar style */
+        #searchResultsList {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.3);
+            /* Scrollbar color */
+        }
+
+        #searchResultsList::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #searchResultsList::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        #searchResultsList::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-primary bg-opacity-90 font-jura">
+    <section class="flex flex-row">
+        <!-- Sidebar -->
+        <div id="navbar"
+            class="w-1/4 bg-black h-screen p-6 flex flex-col justify-between mt-0 fixed top-0 left-0 sidebar">
+            <div class="-mt-6">
+          <a href="../../../index.html"><img src="../../imges/Logo.webp" class="h-20 w-auto" alt="Logo"></a>
+                <ul class="text-center text-[25px]">
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Store</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">Librairie</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="../contact/contact.html"><button class="w-full bg-gray-600 py-2 text-white rounded mb-4">Contact</button></a>
+                <button class="w-full bg-red-500 py-2 text-white rounded">Déconnecté</button>
+            </div>
+        </div>
+        <!-- End of sidebar -->
+
+        <!-- Main content -->
+        <main class="flex flex-col m-[10px] justify-items-center w-[100vw] ml-[25%]">
+            <div id="s-i" class="flex flex-row items-center justify-between m-2">
+                <div class="flex flex-row items-center ml-6">
+                    <input id="Search" type="text" placeholder="Search"
+                        class="bg-gray-500 bg-opacity-35 bg-none w-full p-2 rounded-xl h-14 text-gray-300 focus:outline-none" />
+                    <button onclick="searchItems()" class="flex justify-center items-center -ml-10">
+                        <img id="imag1-nav" src="../../imges/search.png" class="h-14" alt="Search icon">
+                    </button>
+                </div>
+                <button onclick="cartpopup()"><img id="imag2-nav" src="../../imges/carte.png" class="h-14"
+                        alt="Cart icon"></button>
+                <div id="searchResultsPopup"
+                    class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden"
+                    onclick="closePopup(event)">
+                    <div id="popupContent" class="bg-black p-6 rounded-xl w-1/2 max-w-lg max-h-[80vh] overflow-y-auto"
+                        onclick="event.stopPropagation()">
+                        <button onclick="closePopup()" class="absolute top-10 right-10 text-red-600 text-7xl">X</button>
+                        <h2 class="text-3xl text-center mb-4 text-white">Search Results</h2>
+                        <ul id="searchResultsList" class="space-y-4 text-white"></ul>
+                    </div>
+                </div>
+                <!-- your carte -->
+                <div id="cartPopup"
+                    class="fixed inset-0 bg-primary bg-opacity-75 flex justify-center items-center hidden "
+                    onclick="closeCartPopup(event)">
+                    <div id="cartPopupContent" class="bg-black p-6 rounded-xl w-[780px]"
+                        onclick="event.stopPropagation()">
+                        <h2 class="text-3xl font-bold text-center mb-4 text-white">Your Cart</h2>
+                        <div id="cartItemsList" class="flex flex-row text-white">
+                            <!-- Cart items will be dynamically added here -->
+                            <div class="w-1/2 items-end justify-end">
+                                <img class="w-72" src="./../../imges/products/13.webp" alt="">
+                            </div>
+                            <div class="w-1/2">
+                                <h1 class="text-3xl mb-10">Red Dead Redemption 2</h1>
+                                <div class="flex flex-col text-start">
+                                    <p class="text-lg  ">Edition: Ultimate </p>
+                                    <p class="text-lg">Platform: PC </p>
+                                    <p class="text-lg">Price: 34,99 $US </p>
+                                    <p class="text-lg">Bonuses: Story mode boosts, ingame items, bonus cash Release
+                                        Date: Available Now</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sort-filter" class="flex justify-end space-x-4 p-4 mr-7 mt-8 mb-4">
+                <select id="sortPrex" name="filter"
+                    class="bg-[#676767] text-white border border-white px-2 w-72 h-12 rounded-xl mr-2 text-center text-4xl">
+                    <option value="sorte">Sorte</option>
+                    <option value="title">S.Alphabet</option>
+                    <option value="price">S.Prex</option>
+                </select>
+
+                <!-- <button id="sortprex" class="bg-red-700">S.Prex</button> -->
+                <select id="categoryFilter" name="filter"
+                    class="bg-[#676767] text-white border border-white px-2 w-72 h-12 rounded-xl mr-2 text-center text-4xl">
+                    <option value="all">Filter</option>
+                    <option value="Action">Action</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="Open-world">Open World</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Action-adventure">A-Adventure</option>
+                    <option value="Rog">RPG</option>
+                    <option value="Party">Party</option>
+                    <option value="Stealth">Stealth</option>
+                    <option value="Survival">Survival</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Sandbox">Sandbox</option>
+                    <option value="Sction-rpg">A-RPG</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Battle-royale">Battle-Royale</option>
+                </select>
+            </div>
+            <div id="productsPageList" class="grid justify-items-center align-middle w-full grid-cols-3 gap-8">
+            </div>
+        </main>
+        <!-- End of main content -->
+
+
+
+    </section>
+
+    <footer class="bg-black text-white mt-14">
+        <div
+            class="flex flex-row justify-between mr-10 ml-6 items-start flex-wrap max-md:justify-center max-md:gap-10 max-sm:mr-2 max-sm:ml-2 max-sm:justify-center max-sm:items-center">
+            <img src="./../../imges/Logo.webp" class="h-20 w-auto mt-14 max-md:h-10 max-sm:mt-3" alt="Logo">
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">About Us</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Company Info</a>
+                    <a>Careers</a>
+                    <a>Press</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Customer Support</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Help Center</a>
+                    <a>Contact Us</a>
+                    <a>Refund Policy</a>
+                </div>
+            </div>
+            <div class="mt-14 cursor-pointer max-sm:mt-0">
+                <h3 class="text-xl mb-3 max-md:text-[10px]">Legal & Policies</h3>
+                <div class="flex flex-col max-md:hidden">
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Legal Notices</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-t-2 border-white opacity-50 my-4 w-3/4 mx-auto">
+        <div class="flex flex-row justify-center gap-40 mr-10 ml-6 items-center max-md:gap-10">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+            <a href="">Twitter</a>
+        </div>
+        <div class="text-center mt-6 text-xl">
+            <p>© 2024 BitCart. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script src="./products.js"></script>
+    <script src="./../../js/script.js"></script>
+</body>
+
+</html>

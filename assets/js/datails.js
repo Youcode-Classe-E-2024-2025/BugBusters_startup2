@@ -1,12 +1,13 @@
 const searchParams = new URLSearchParams(window.location.search);
 const someParam = searchParams.get("id");
+let gamelib=[]
 console.log(someParam);
 let text = localStorage.getItem("productData");
 games = JSON.parse(text);
 console.log(Object.values(games)[someParam].title);
 
 document.getElementById("gamedetail").innerHTML += `
-    <div class="flex flex-row gap-11 mr-16">
+    <div id="prodet" class="flex flex-row gap-11 mr-16">
       <!-- game image carousel -->
       <div id="carousel" class="relative w-80 overflow-hidden">
         <div id="carousel-inner" class="flex transition-transform duration-500">
@@ -66,7 +67,7 @@ document.getElementById("gamedetail").innerHTML += `
           <button class="w-full bg-black hover:bg-gray-900 text-white py-2 px-4 rounded text-2xl">
             Add To Cart
           </button>
-          <button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded text-2xl">
+          <button id=${someParam} onclick="gameaddlib(${someParam})" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded text-2xl">
             Buy Now
           </button>
         </div>
@@ -121,3 +122,37 @@ document.getElementById("prevBtn").addEventListener("click", () => {
 document.getElementById("nextBtn").addEventListener("click", () => {
   updateCarousel("next");
 });
+
+function saveGamesTolib() {
+  let myJSON = JSON.stringify(gamelib);
+  localStorage.setItem("gamlib", myJSON);
+}
+
+if (!localStorage.getItem("gamlib")) { //if no local storage make one
+  saveGamesTolib();
+}
+
+// function gameaddlib(id){
+//   document.getElementById(id).remove()
+//   gamelib = JSON.parse(localStorage.getItem("gamlib"));
+//   gamelib.push(id)
+//   saveGamesTolib();
+// }
+async function gameaddlib(id) {
+  const game = Object.values(games)[id];
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFontSize(46);
+  doc.text("Bitcrat", 80, 30);
+  doc.setFontSize(16);
+  doc.text(`Game Title:                  ${game.title}`, 10, 40);
+  doc.text(`Price:                          ${game.price.toFixed(2)}$`, 10, 50);
+  doc.text("Thank you for your purchase!", 60, 70);
+  doc.save(`${game.title}_Receipt.pdf`);
+  document.getElementById(id).remove();
+  gamelib = JSON.parse(localStorage.getItem("gamlib")) || [];
+  if(!gamelib.includes(id)){
+    gamelib.push(id);
+  }
+  saveGamesTolib();
+}
