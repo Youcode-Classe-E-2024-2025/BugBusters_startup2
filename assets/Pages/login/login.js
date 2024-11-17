@@ -21,13 +21,18 @@ loginForm.addEventListener('submit', function(event) {
         if (user) {
             // Si l'utilisateur est trouvé, connecter l'utilisateur et stocker ses informations globalement
             
-
+            if(email === "admin@admin.com"){
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                document.getElementById("sub_but").href = "../admin/admin.html";
+                document.getElementById("sub_but").click();
+            }else{
             // Sauvegarder l'utilisateur connecté dans localStorage pour qu'il soit accessible partout
             localStorage.setItem('currentUser', JSON.stringify(user));
             document.getElementById("sub_but").href = "../products/products.html";
 
             document.getElementById("sub_but").click();
             // Vous pouvez rediriger l'utilisateur vers une autre page après connexion
+            }
 
         } else {
             alert("Email ou mot de passe incorrect.");
