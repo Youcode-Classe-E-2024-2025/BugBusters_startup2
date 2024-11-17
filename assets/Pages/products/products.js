@@ -10,6 +10,12 @@ function displayItems() {
     const gamesArray = Object.values(games);
     t=0
     gamesArray.forEach(game => {
+        let pri=game.price+" $US"
+        let discPri = ((1 - (game.discount / 100)) * game.price).toFixed(2) + " $US"
+        if(game.price===0){
+            pri=""
+            discPri="Free"
+        }
         productsList.innerHTML += `
             <a onclick="detailGen(${t}),event.preventDefault()" class="justify-items-center transition duration-300 ease-in-out hover:scale-110" href="">
                 <div class="text-xl">
@@ -18,8 +24,8 @@ function displayItems() {
                     <p class="text-white">${game.title}</p>
                     <div class="flex justify-between">
                         <p id="sold" class="bg-[#ff0000] w-20 text-center rounded-md text-white">-${game.discount}%</p>
-                        <p class="text-gray-600 text-xs content-center line-through">${game.price} $US</p>
-                        <p class="text-white">${((1 - (game.discount / 100)) * game.price).toFixed(2)} $US</p>
+                        <p class="text-gray-600 text-xs content-center line-through">${pri}</p>
+                        <p class="text-white">${discPri}</p>
                     </div>
                 </div>
             </a>`;
