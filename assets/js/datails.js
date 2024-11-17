@@ -151,8 +151,8 @@ async function gameaddlib(id) {
   doc.save(`${game.title}_Receipt.pdf`);
   document.getElementById(id).remove();
   gamelib = JSON.parse(localStorage.getItem("gamlib")) || [];
-  if(!gamelib.includes(id)){
-    gamelib.push(id);
+  if(!gamelib.some((obj) => obj.title === Object.values(games)[id].title)){
+    gamelib.push(Object.values(games)[id]);
   }
   saveGamesTolib();
 }
