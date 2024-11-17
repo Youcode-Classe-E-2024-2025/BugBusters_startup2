@@ -21,12 +21,10 @@ BugBusters Startup 2 is a gaming platform that provides users with an engaging w
 
 ```
 📂 BugBusters_startup2
-├── 📁 assets          # Contains images, logos, and static resources
-├── 📁 src
-│   ├── 📂 components  # Modular UI components (e.g., carousel, game details)
-│   ├── 📜 app.js      # Main JavaScript logic for the platform
-│   ├── 📜 index.html  # Main entry point for the app
-│   └── 📜 styles.css  # Styling for the application
+├── 📁 assets          # Contains images, logos, and static resources, game details
+│    └── 📂 css  # Modular UI components (styling)
+│         └── 📜 output.css  # Styling for the application
+├── 📜 index.html      # Main entry point for the app, carousel
 ├── 📜 README.md       # Documentation
 └── 📜 package.json    # Dependencies and project metadata
 ```
