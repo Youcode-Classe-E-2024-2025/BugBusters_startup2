@@ -3,6 +3,16 @@ const emailInput = document.querySelector('input[name="email"]');
 const passwordInput = document.querySelector('input[name="password"]');
 const confirmPasswordInput = document.querySelector('input[name="confirmPassword"]');
 
+let users = JSON.parse(localStorage.getItem('users')) || [];
+let admin = {
+    email: "admin@admin.com",
+    password: "admin"
+};
+if(users[0]?.email!==admin.email){
+    users.push(admin);
+    localStorage.setItem('users', JSON.stringify(users));
+};
+
 signupForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
     const email = emailInput.value;
@@ -32,22 +42,27 @@ signupForm.addEventListener('submit', function(event) {
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
     // Créer un objet utilisateur avec les informations du formulaire
-    const newUser = {
-        email: email,
-        password: password
-    };
-
-    // Ajouter le nouvel utilisateur au tableau
-    users.push(newUser);
-
-    // Sauvegarder à nouveau le tableau des utilisateurs dans le localStorage
-    localStorage.setItem('users', JSON.stringify(users));
-
-    // Afficher un message de confirmation
-    alert("Inscription réussie !");
-
-    // Attendre un peu avant de rediriger l'utilisateur
+    if (users.some(e => e.email === email)) {
+        alert("this email is already used by another user")
+    }else{
+        const newUser = {
+            email: email,
+            password: password
+        };
+    
+        // Ajouter le nouvel utilisateur au tableau
+        users.push(newUser);
+    
+        // Sauvegarder à nouveau le tableau des utilisateurs dans le localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+    
+        // Afficher un message de confirmation
+        alert("Inscription réussie !");
+            // Attendre un peu avant de rediriger l'utilisateur
     setTimeout(function() {
         window.location.href = "../login/login.html"; // Redirige vers la page de connexion
     }, 1000); // délai de 1 seconde
+    };
+    
+
 });
